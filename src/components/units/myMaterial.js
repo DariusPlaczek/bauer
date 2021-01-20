@@ -1,4 +1,4 @@
-const tradeMaterial = {
+const myMaterial = {
     basic: [
         {
             id: '9d38a82f-7e75-4b0f-9eac-954d0db772f2',
@@ -18,4 +18,4 @@ const tradeMaterial = {
     ]
 }
 
-export { tradeMaterial }
+export { myMaterial }

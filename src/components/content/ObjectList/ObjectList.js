@@ -1,14 +1,13 @@
 import React from 'react'
 
-import { tradeMaterial } from '../../units/tradeMaterial'
+import { myMaterial } from '../../units/myMaterial'
 import SingleObject from './SingleObject';
 
 function ObjectList() {
 
-    console.log(typeof(tradeMaterial.basic.basicPrice));
     return (
         <>
-            {tradeMaterial.basic.map((value) => <SingleObject key={value.id} title={value.name} price={value.basicPrice} />)}
+            {myMaterial.basic.map((value) => <SingleObject key={value.id} title={value.name} price={value.basicPrice} />)}
         </>
     )
 }

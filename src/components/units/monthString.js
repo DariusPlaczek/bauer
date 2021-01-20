@@ -1,7 +1,7 @@
 const monthString = {
     0: {
       days: 31,
-      month: 'Jenner'
+      month: 'Jenner',
     },
     1: {
       days: 28,
