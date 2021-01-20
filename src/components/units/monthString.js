@@ -1,4 +1,4 @@
-const gameDate = {
+const monthString = {
     0: {
       days: 31,
       month: 'Jenner'
@@ -49,4 +49,4 @@ const gameDate = {
     }
 }
 
-export { gameDate };
+export { monthString };

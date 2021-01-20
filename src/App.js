@@ -1,13 +1,22 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import "./App.css";
 
-import TopBar from './components/topBar/TopBar'
+import rootReducer from "./rootReducer";
+import TopBar from "./components/sites/topBar/TopBar";
+import Content from "./components/content/Content";
+
+const store = createStore(rootReducer);
 
 function App() {
   return (
-    <div className="game-container">
-      <TopBar />
-    </div>
+    <Provider store={store}>
+      <div className="game-container">
+        <TopBar />
+        <Content />
+      </div>
+    </Provider>
   );
 }
 

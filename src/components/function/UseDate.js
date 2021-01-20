@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 
-import { gameDate } from '../units/gameDate'
+import { gameDate } from '../units/gameDate';
 
 function UseDate() {
 
@@ -31,7 +31,6 @@ function UseDate() {
         })
 
         return;
-
       } else {
         setDate({
           gameDay: 1,
@@ -40,9 +39,8 @@ function UseDate() {
         })
 
         return;
-
       }
-    }, 100);
+    }, 1000);
   }, [gameDay, gameMonth, gameYear])
 
   return {gameDay, gameMonth, gameYear};
