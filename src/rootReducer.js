@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import dayReducer from './components/function/Date/redux'
+import dayReducer from './function/Date/redux'
 
 const rootReducer = combineReducers({
   reduxDate: dayReducer

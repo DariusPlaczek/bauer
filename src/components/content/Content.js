@@ -1,12 +1,17 @@
 import React from 'react'
+import './Content.css'
 
-import ObjectList from './ObjectList/ObjectList';
+import Leftsidebar from './Leftsidebar/Leftsidebar'
+import Middlecontent from './Middlecontent/Middlecontent'
+import Rightsidebar from './Rightsidebar/Rightsidebar'
 
 function Content() {
 
   return (
     <div className="main-container">
-      <ObjectList />
+      <Leftsidebar />
+      <Middlecontent />
+      <Rightsidebar />
     </div> 
 
 )
