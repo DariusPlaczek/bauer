@@ -13,9 +13,7 @@ function DateContainer() {
 
   return (
     <div className="date-container">
-            <h4>{`${gameDate.day} - ${monthString[gameDate.month].month} - ${
-        gameDate.year
-      }`}</h4>
+      <h4>{`${monthString[gameDate.month].month} - ${gameDate.year}`}</h4>
       <button onClick={() => dispatch(addDay())}>{language.de.button.nextDay}</button>
     </div>
   )

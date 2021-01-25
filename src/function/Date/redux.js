@@ -1,4 +1,4 @@
-import { monthString } from "../../units/monthString";
+//import { monthString } from "../../units/monthString";
 import { buyMultiplikate } from "../multiplikate";
 
 const Add_New_Day = "date/Add_New_Day";
@@ -16,28 +16,27 @@ const INITIAL_STATE = {
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Add_New_Day:
-      if (state.month === 11 && state.day === monthString[state.month].days) {
+      if (state.month === 11 && state.day === 4) {
         return {
           ...state,
           day: 1,
           month: 0,
           year: state.year + 1,
-          sellMultiplikat: buyMultiplikate(),
+          sellMultiplikat: buyMultiplikate()
         };
       }
 
-      if (state.day !== monthString[state.month].days) {
+      if (state.day !== 4) {
         return {
           ...state,
           day: state.day + 1,
-          sellMultiplikat: buyMultiplikate(),
         };
       } else {
         return {
           ...state,
           day: 1,
           month: state.month + 1,
-          sellMultiplikat: buyMultiplikate(),
+          sellMultiplikat: buyMultiplikate()
         };
       }
     default:
