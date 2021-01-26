@@ -25,7 +25,6 @@ function Clock() {
     }
   }, [dayTrigger])
 
-  console.log(dayTrigger);
   return (
     <div className="clock-container">
       <div className="clock-quader clock-top-left"></div>

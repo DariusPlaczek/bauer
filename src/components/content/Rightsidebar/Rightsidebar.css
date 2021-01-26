@@ -17,13 +17,13 @@
 }
 
 .clock-quader {
-  width: 98px;
-  height: 98px;
+  width: 100px;
+  height: 100px;
 }
 
 .clock-top-left {
   border-radius: 100px 0 0 0;
-  background-color: brown;
+  background-color: aqua;
 }
 
 .clock-top-right {
@@ -33,12 +33,12 @@
 
 .clock-bottom-left {
   border-radius: 0 0 0 100px;
-  background-color: chartreuse;
+  background-color: aqua;
 }
 
 .clock-bottem-right {
   border-radius: 0 0 100px 0;
-  background-color: crimson;
+  background-color: aqua;
 }
 
 /* .clock-pointer-container {
