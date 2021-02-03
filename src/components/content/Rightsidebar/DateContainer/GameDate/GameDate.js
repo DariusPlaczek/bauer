@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { monthString } from "../../../../../units/monthString";
-import { language } from "../../../../../units/language";
-import { addDay } from "../../../../../function/Date/redux";
+import { language, monthNames } from "../../../../../directories";
+import { addDay } from "../../../../../executeRedux";
 
 function GameDate() {
   const { month, year } = useSelector((state) => state.reduxDate);
@@ -31,7 +30,7 @@ function GameDate() {
 
   return (
     <div className="date-container">
-      <h4>{`${monthString[monthTrigger].month} - ${yearTrigger}`}</h4>
+      <h4>{`${monthNames[monthTrigger].month} - ${yearTrigger}`}</h4>
       <button disabled={isButton} onClick={activeButton}>
         {language.de.button.nextDay}
       </button>

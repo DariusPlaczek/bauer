@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import useConvert from "../../../../function/GameMoney/useConvert";
+import {useConversion} from "../../../../directories";
 
 function GameMoney() {
   const allMoney = useSelector((state) => state.reduxMoney.pfennig);
-  const { pfennig, schilling, pfund } = useConvert(allMoney);
+  const { pfennig, schilling, pfund } = useConversion(allMoney);
 
   return (
     <>

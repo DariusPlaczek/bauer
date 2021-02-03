@@ -3,3 +3,17 @@
   height: 95%;
   background-color: darkcyan;
 }
+
+.box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: black;
+}
+
+.track {
+position: absolute;
+bottom: 0;
+width: 150px;
+background-color: aqua;
+}

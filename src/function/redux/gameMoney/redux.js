@@ -5,7 +5,7 @@ export const addMoney = (event) => ({ type: ADD_MONEY, payload: event });
 export const subMoney = (event) => ({ type: SUB_MONEY, payload: event });
 
 const INITIAL_STATE = {
-  pfennig: 256,
+  pfennig: 479,
 };
 
 function reducer(state = INITIAL_STATE, action) {

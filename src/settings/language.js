@@ -1,4 +1,4 @@
-const language = {
+const languages = {
   de: {
     button: {
       nextDay: 'Nächster Tag'
@@ -16,4 +16,4 @@ const language = {
   }
 };
 
-export { language };
+export default languages ;

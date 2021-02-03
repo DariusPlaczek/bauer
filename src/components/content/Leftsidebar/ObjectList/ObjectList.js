@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { myMaterial } from '../../../../units/myMaterial'
+import { ware } from '../../../../directories';
 import SingleObject from './SingleObject';
 
 function ObjectList() {
 
     return (
         <>
-            {myMaterial.basic.map((value) => <SingleObject key={value.id} title={value.name} price={value.basicPrice} count={value.count} />)}
+            {ware && ware.map((value) => <SingleObject key={value.id} title={value.name} price={value.price.basicPrice} count={value.price.count} />)}
         </>
     )
 }

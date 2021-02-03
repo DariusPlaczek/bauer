@@ -49,4 +49,4 @@ const monthString = {
     }
 }
 
-export { monthString };
+export default monthString;
