@@ -1,16 +1,18 @@
 import React from "react";
 
 import './Leftsidebar.css'
-import ObjectList from './ObjectList/ObjectList'
 import GameMoney from './GameMoney/GameMoney'
-import Storrage from './Storrage/Storrage'
+//import Storrage from './Storrage/Storrage'
+import Trade from './Trade/Trade'
 
 function Leftsidebar() {
   return (
     <div className="leftsidebar-container">
       <GameMoney />
-      <ObjectList />
-      <Storrage />
+      <br />
+      <Trade />
+
+     {/* <Storrage />  */}
     </div>
   );
 }

@@ -1,6 +1,4 @@
-
-
-const productList = [
+const cityWarehouse = [
   {
     idPW: "PW-01",
     idCW: "CW-01",
@@ -43,6 +41,6 @@ const productList = [
     origin: "Germany",
     weight: 2,
   },
-];
+]
 
-export default productList;
+export default cityWarehouse;

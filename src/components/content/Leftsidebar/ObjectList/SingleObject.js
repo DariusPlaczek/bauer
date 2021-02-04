@@ -1,24 +1,26 @@
 import React from "react";
-//import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import {useConversion}  from '../../../../directories'
+import {changeCWC} from '../../../../function/redux/cityWarehouseCount/redux'
 
 function SingleObject(props) {
 
-  const { title, price, count } = props;
- // const sellMulit = useSelector((state) => state.reduxDate.sellMultiplikat)
- 
+  const { id, title, price, count, onClick } = props;
+  const warehouseCount = useSelector((state) => state.reduxCWCount)
+  const dispatch = useDispatch();
   const { pfennig, schilling, pfund } = useConversion(price)
   
-  console.log(name(price));
 
   return (
     <div className="SingleObject-container">
         <p>{`${title}`}</p>
-      <p>{`PD:${pfund} | S:${schilling} | PF:${pfennig} `}</p>
-      <p>Preis: {price}</p>
-      <p>{`${count}`}</p>
-      <br />
+        <h5>{count}</h5>
+        <h6>PD: {pfund} | SG: {schilling} | PG: {pfennig} </h6>
+        <button id={id} onClick={() => onClick([id, title, price])}>ADD {title} to card</button> 
+
+        {/* <p>{warehouseCount[title]}</p>
+      <button onClick={() => dispatch(changeCWC({name: title, count: 1}))}>CLICK ME</button> */}
       <br />
     </div>
   );
