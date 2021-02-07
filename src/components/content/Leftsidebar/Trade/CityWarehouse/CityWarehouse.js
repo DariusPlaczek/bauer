@@ -1,15 +1,22 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
+
+import WarehouseContainer from "../WarehouseContainer";
+import { addToBuy } from "../../../../../function/redux/trade/redux";
 
 function CityWarehouse() {
-  
-  
-  return (
-    <div>
-      <h4>City Warehouse</h4>
+  const reduxCWCount = useSelector((state) => state.reduxCWCount);
 
-    </div>
-  )
+  return (
+    <>
+      <h4>City Warehouse</h4>
+      <WarehouseContainer
+        keyValue="WC"
+        reduxCount={reduxCWCount}
+        dispatchProp={addToBuy}
+      />
+    </>
+  );
 }
 
-export default CityWarehouse
+export default CityWarehouse;
