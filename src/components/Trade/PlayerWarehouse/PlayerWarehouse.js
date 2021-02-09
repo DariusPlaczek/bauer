@@ -7,7 +7,7 @@ import {useConversion} from '../../../directories'
 import { addToSell } from "../../../function/redux/trade/redux";
 
 function PlayerWarehouse() {
-  const reduxPWCount = useSelector((state) => state.reduxPWCount);
+  const reduxPlayerConfig = useSelector((state) => state.reduxPlayerConfig);
   const {sumSell} = useSelector((state) => state.reduxTrade)
 
   const { pfennig, schilling, pfund } = useConversion(sumSell)
@@ -17,7 +17,7 @@ function PlayerWarehouse() {
       <h4>Player Warehouse</h4>
       <WarehouseContainer
         keyValue="WC"
-        reduxCount={reduxPWCount}
+        reduxCount={reduxPlayerConfig}
         dispatchProp={addToSell}
       />
       <br />

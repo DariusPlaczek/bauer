@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-import { gameSetting } from '../../directories'
+import { gameConfig } from '../../directories'
 
 
 function useConversion(props) {
 
-  const { schillingZuPfund, pfennigZuSchilling } = gameSetting.convertFactor;
+  const { schillingZuPfund, pfennigZuSchilling } = gameConfig.convertFactor;
 
   const [pfennig, setPfenning] = useState(0);
   const [schilling, setSchilling] = useState(0);

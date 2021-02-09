@@ -1,12 +1,11 @@
-const gameSettings = {
+const gameConfigs = {
   convertFactor : {
     pfennigZuSchilling: 10,
     schillingZuPfund: 10
   },
   storrage: {
-    count: 1,
-    size: 50
+    size: 100
   }
 }
 
-export default gameSettings
+export default gameConfigs

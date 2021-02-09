@@ -1,12 +1,8 @@
-
-
 const productList = [
   {
-    idPW: "PW-01",
-    idCW: "CW-01",
-    name: "Reis",
-    cityWarehouse: 0,
-    playerWarehouse: 0,
+    idPS: "PS-01",
+    idCS: "CS-01",
+    productName: "Reis",
     price: {
       basicPrice: 12,
       rarity: 1.0,
@@ -16,11 +12,9 @@ const productList = [
     weight: 2,
   },
   {
-    idPW: "PW-02",
-    idCW: "CW-02",
-    name: "Malz",
-    cityWarehouse: 0,
-    playerWarehouse: 0,
+    idPS: "PS-02",
+    idCS: "CS-02",
+    productName: "Malz",
     price: {
       basicPrice: 23,
       rarity: 1.0,
@@ -30,11 +24,9 @@ const productList = [
     weight: 2,
   },
   {
-    idPW: "PW-03",
-    idCW: "CW-03",
-    name: "Gold",
-    cityWarehouse: 0,
-    playerWarehouse: 0,
+    idPS: "PS-03",
+    idCS: "CS-03",
+    productName: "Gold",
     price: {
       basicPrice: 110,
       rarity: 0.1,

@@ -1,19 +1,21 @@
 import React from "react";
+import {useSelector} from 'react-redux'
 
 // import config from '../../../../config/gameConfig/config'
-import { gameSetting } from '../../../../directories'
+import { gameConfig } from '../../../../directories'
 
 function Storrage() {
 
   const sizes = gameSetting.storrage.size
+  const {storageSpace} = useSelector((state) => state.reduxMoney)
   const styles = {
-    height: sizes + "%"
+    height: storageSpace + "%"
   }
 
   return (
     <>
       <div className="box">
-        <div className="track" style={styles}>{sizes}</div>
+        <div className="track" style={styles}>{storageSpace}</div>
       </div>
     </>
   );

@@ -1,13 +1,14 @@
 // ****************** CONFIG *******************/
-import gameSettings from "./settings/gameSettings";
-import languages from "./settings/language";
-import monthString from "./settings/monthString";
-import cityWarehouse from "./settings/cityWarehouse.js";
+import gameConfigs from "./config/gameConfigs";
+import productList from "./config/productList";
+import languages from "./config/language";
+import monthString from "./config/monthString";
 
-export const gameSetting = gameSettings;
+
+export const gameConfig = gameConfigs;
+export const productLists = productList
 export const language = languages;
 export const monthNames = monthString;
-export const ware = cityWarehouse;
 
 
 // ****************** FUNCTION *******************/

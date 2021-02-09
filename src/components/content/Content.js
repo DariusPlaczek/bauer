@@ -1,34 +1,39 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Content.css";
 
 import Leftsidebar from "./Leftsidebar/Leftsidebar";
-import Middlecontent from "./Middlecontent/Middlecontent";
 import Rightsidebar from "./Rightsidebar/Rightsidebar";
-import PlayerWarehouse from "../Trade/PlayerWarehouse/PlayerWarehouse";
-import CityWarehouse from "../Trade/CityWarehouse/CityWarehouse";
+
+import Home from "./Middlecontent/Home/Home";
+import PlayerStock from "./Middlecontent/Pages/PlayerPages/PlayerStock/PlayerStock";
+import CityStock from "./Middlecontent/Pages/CityPages/CityStock/CityStock";
 
 function Content() {
   return (
-    <Router>
-      <div className="main-container">
+    <div className="main-container">
+      <Router>
+
         <Leftsidebar />
+
         <div className="middlecontent-container">
           <Switch>
-            <Route path="/playerwarehouse">
-              <PlayerWarehouse />
+            <Route path="/playerstock">
+              <PlayerStock />
             </Route>
-            <Route path="/citywarehouse">
-              <CityWarehouse />
+            <Route path="/citystock">
+              <CityStock />
             </Route>
             <Route exact path="/">
-              <Middlecontent />
+              <Home />
             </Route>
           </Switch>
         </div>
+
         <Rightsidebar />
-      </div>
-    </Router>
+        
+      </Router>
+    </div>
   );
 }
 
