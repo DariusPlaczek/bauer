@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useConversion } from "../../../../directories";
+import { useConversion } from "../../directories";
 
 function Conversion(props) {
   const {sum} = props;
@@ -9,7 +9,7 @@ function Conversion(props) {
   return (
     <>
       <h6>
-        PD: {pfund} | SG: {schilling} | PG: {pfennig}{" "}
+        PD: {pfund} | SG: {schilling} | PG: {pfennig}
       </h6>
     </>
   );

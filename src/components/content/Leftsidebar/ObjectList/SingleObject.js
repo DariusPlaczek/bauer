@@ -17,11 +17,10 @@ function SingleObject(props) {
   
   return (
     <div className="SingleObject-container">
-        <p>{`${title}`}
+        <p>{`${title}`}</p>
         <form>
           <input name="age" type="number" min="0" max={count} value={useCount} onChange={(value) => onSubmit(value)} />
         </form>
-        </p>
         <h5>{count}</h5>
         <h6>PD: {pfund} | SG: {schilling} | PG: {pfennig} </h6>
     </div>

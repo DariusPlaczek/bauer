@@ -1,21 +1,25 @@
-import React from 'react'
-import './Content.css'
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./Content.css";
 
-import Leftsidebar from './Leftsidebar/Leftsidebar'
-import Middlecontent from './Middlecontent/Middlecontent'
-import Rightsidebar from './Rightsidebar/Rightsidebar'
+import Leftsidebar from "./Leftsidebar/Leftsidebar";
+import Middlecontent from "./Middlecontent/Middlecontent";
+import Rightsidebar from "./Rightsidebar/Rightsidebar";
 
 function Content() {
-
   return (
     <div className="main-container">
       <Leftsidebar />
-      <Middlecontent />
+      <Router>
+        <Switch>
+          <Route path="/">
+            <Middlecontent />
+          </Route>
+        </Switch>
+      </Router>
       <Rightsidebar />
-    </div> 
-
-)
+    </div>
+  );
 }
 
-export default Content
-
+export default Content;

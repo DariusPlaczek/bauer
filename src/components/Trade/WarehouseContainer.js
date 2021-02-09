@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import SingleObject from "../ObjectList/SingleObject";
+import SingleObject from "../content/Leftsidebar/ObjectList/SingleObject";
 
 function WarehouseContainer(props) {
 
@@ -42,9 +42,7 @@ function WarehouseContainer(props) {
   };
 
   useEffect(() => {
-
     dispatch(dispatchProp(ware));
-
   }, [ware, dispatchProp, dispatch]);
 
   return (
