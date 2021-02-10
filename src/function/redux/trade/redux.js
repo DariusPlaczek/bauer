@@ -38,7 +38,7 @@ function calculation(value) {
 
   let sum = 0;
   for (const iterator of value) {
-   sum = sum + iterator.count * iterator.price;
+   sum = sum + iterator.count * iterator.price.basicPrice;
  }
   return sum;
 }

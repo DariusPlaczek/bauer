@@ -1,7 +1,7 @@
-const CHANGE_PLAYER_MONEY = "playerConfig/CHANGE_PLAYER_MONEY";
+const ADD_STOCK_TO_STOCK = "city/ADD_STOCK_TO_STOCK";
 
-export const changePlayerMoney = (event) => ({
-  type: CHANGE_PLAYER_MONEY,
+export const changeCityStock = (event) => ({
+  type: ADD_STOCK_TO_STOCK,
   payload: event,
 });
 
@@ -10,25 +10,25 @@ const INITIAL_STATE = {
   storageSpace: 0,
   stockProducts: [
     {
-      customID: "CS-01",
+      customID: "PS-01",
       productName: "Reis",
-      count: 52,
+      count: 102,
       price: {
         basicPrice: 12,
       }
     },
     {
-      customID: "CS-02",
+      customID: "PS-02",
       productName: "Malz",
-      count: 35,
+      count: 76,
       price: {
         basicPrice: 23,
       }
     },
     {
-      customID: "CS-03",
+      customID: "PS-03",
       productName: "Gold",
-      count: 3,
+      count: 36,
       price: {
         basicPrice: 110,
       }
@@ -38,7 +38,7 @@ const INITIAL_STATE = {
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.payload) {
-    case CHANGE_PLAYER_MONEY:
+    case ADD_STOCK_TO_STOCK:
       return {
         ...state,
         stockProducts: action.payload,
