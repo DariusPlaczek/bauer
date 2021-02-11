@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import {useConversion} from "../../../../directories";
 
 function GameMoney() {
-  const allMoney = useSelector((state) => state.reduxMoney.playerMoney);
-  const { pfennig, schilling, pfund } = useConversion(allMoney);
+  const { playerMoney } = useSelector((state) => state.reduxPlayerData);
+  const { pfennig, schilling, pfund } = useConversion(playerMoney);
 
   return (
     <>

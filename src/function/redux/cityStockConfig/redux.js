@@ -1,13 +1,17 @@
-const ADD_STOCK_TO_STOCK = "city/ADD_STOCK_TO_STOCK";
+const ADD_TO_CITY_STOCK = "city/ADD_TO_CITY_STOCK";
+const REMOVE_TO_CITY_STOCK= "city/REMOVE_TO_CITY_STOCK";
 
-export const changeCityStock = (event) => ({
-  type: ADD_STOCK_TO_STOCK,
-  payload: event,
+export const addToCityStock = (event) => ({
+  type: ADD_TO_CITY_STOCK,
+  payload: event
 });
 
+export const removeToCityStock = (event) => ({
+  type: REMOVE_TO_CITY_STOCK,
+  payload: event
+})
+
 const INITIAL_STATE = {
-  playerMoney: 479,
-  storageSpace: 0,
   stockProducts: [
     {
       customID: "PS-01",
@@ -15,7 +19,7 @@ const INITIAL_STATE = {
       count: 102,
       price: {
         basicPrice: 12,
-      }
+      },
     },
     {
       customID: "PS-02",
@@ -23,7 +27,7 @@ const INITIAL_STATE = {
       count: 76,
       price: {
         basicPrice: 23,
-      }
+      },
     },
     {
       customID: "PS-03",
@@ -31,22 +35,48 @@ const INITIAL_STATE = {
       count: 36,
       price: {
         basicPrice: 110,
-      }
+      },
     },
   ],
 };
 
 function reducer(state = INITIAL_STATE, action) {
-  switch (action.payload) {
-    case ADD_STOCK_TO_STOCK:
-      return {
-        ...state,
-        stockProducts: action.payload,
-      };
-
+  switch (action.type) {
+    case REMOVE_TO_CITY_STOCK:
+      return {...state,
+        stockProducts: removeCounts([...state.stockProducts], action.payload),
+      }
+  
     default:
-      return { ...state };
+      return {...state}
   }
+
 }
 
-export default reducer;
+export default reducer
+
+function removeCounts(stockArray, changeArray) {
+  for (let i = 0; i < stockArray.length; i++) {
+    if (stockArray[i].productName === changeArray[0]) {
+      const cache = stockArray[i].count - changeArray[1];
+      stockArray[i].count = cache;
+    }
+  }
+  
+  return stockArray;
+}
+
+
+
+function addCounts(stockArray, changeArray) {
+  for (let i = 0; i < stockArray.length; i++) {
+    if (stockArray[i].productName === changeArray[0]) {
+      const cache = stockArray[i].count + changeArray[1];
+      stockArray[i].count = cache;
+    }
+  }
+  
+  return stockArray;
+}
+
+

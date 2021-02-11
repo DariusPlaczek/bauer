@@ -1,12 +1,19 @@
-const CHANGE_PLAYER_MONEY = "playerConfig/CHANGE_PLAYER_MONEY";
+const ADD_TO_PLAYER_STOCK = "player/ADD_TO_PLAYER_STOCK";
+const REMOVE_TO_PLAYER_STOCK = "player/REMOVE_TO_PLAYER_STOCK";
 
-export const changePlayerMoney = (event) => ({
-  type: CHANGE_PLAYER_MONEY,
+
+export const addToPlayerStock = (event) => ({
+  type: ADD_TO_PLAYER_STOCK,
+  payload: event,
+});
+
+export const removeToPlayerStock = (event) => ({
+  type: REMOVE_TO_PLAYER_STOCK,
   payload: event,
 });
 
 const INITIAL_STATE = {
-  playerMoney: 479,
+  playerMoney: 47900,
   storageSpace: 0,
   stockProducts: [
     {
@@ -15,7 +22,7 @@ const INITIAL_STATE = {
       count: 52,
       price: {
         basicPrice: 12,
-      }
+      },
     },
     {
       customID: "CS-02",
@@ -23,7 +30,7 @@ const INITIAL_STATE = {
       count: 35,
       price: {
         basicPrice: 23,
-      }
+      },
     },
     {
       customID: "CS-03",
@@ -31,17 +38,27 @@ const INITIAL_STATE = {
       count: 3,
       price: {
         basicPrice: 110,
-      }
+      },
     },
   ],
 };
 
 function reducer(state = INITIAL_STATE, action) {
-  switch (action.payload) {
-    case CHANGE_PLAYER_MONEY:
+  switch (action.type) {
+
+    case ADD_TO_PLAYER_STOCK:
       return {
         ...state,
-        stockProducts: action.payload,
+        playerMoney: action.payload.money,
+        stockProducts: buyProducts(
+          [...state.stockProducts],
+          action.payload.stock
+        ),
+      };
+
+    case REMOVE_TO_PLAYER_STOCK:
+      return {
+        ...state,
       };
 
     default:
@@ -50,3 +67,16 @@ function reducer(state = INITIAL_STATE, action) {
 }
 
 export default reducer;
+
+
+
+function buyProducts(stockArray, changeArray) {
+  for (let i = 0; i < stockArray.length; i++) {
+    if (stockArray[i].productName === changeArray[0]) {
+      const cache = stockArray[i].count + changeArray[1];
+      stockArray[i].count = cache;
+    }
+  }
+
+  return stockArray;
+}
