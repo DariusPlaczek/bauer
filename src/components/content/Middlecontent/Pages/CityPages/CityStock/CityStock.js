@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import StockList from "../../../Function/Stock/StockList";
 import Trade from "../../../Function/Stock/Trade";
-import { addToBuy } from "../../../../../../function/redux/trade/redux";
-import {removeToCityStock, addToPlayerStock} from "../../../"
+import {removeToCityStock, addToPlayerStock, addToBuy} from "../../../"
 
 
 function CityStock() {
@@ -47,7 +46,7 @@ function CityStock() {
       />
       <Trade tradeStock={buy} totalSum={sumBuy} />
       <button disabled={disabledButton} onClick={trading}>
-        Buy
+        KAUFEN
       </button>
     </>
   );

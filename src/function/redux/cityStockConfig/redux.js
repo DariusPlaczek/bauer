@@ -45,7 +45,11 @@ function reducer(state = INITIAL_STATE, action) {
     case REMOVE_TO_CITY_STOCK:
       return {...state,
         stockProducts: removeCounts([...state.stockProducts], action.payload),
-      }
+      };
+    case ADD_TO_CITY_STOCK:
+      return {
+        stockProducts: addCounts([...state.stockProducts], action.payload),
+      };
   
     default:
       return {...state}
@@ -65,7 +69,6 @@ function removeCounts(stockArray, changeArray) {
   
   return stockArray;
 }
-
 
 
 function addCounts(stockArray, changeArray) {

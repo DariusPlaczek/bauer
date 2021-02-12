@@ -13,7 +13,7 @@ export const removeToPlayerStock = (event) => ({
 });
 
 const INITIAL_STATE = {
-  playerMoney: 47900,
+  playerMoney: 479,
   storageSpace: 0,
   stockProducts: [
     {
@@ -50,7 +50,7 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         playerMoney: action.payload.money,
-        stockProducts: buyProducts(
+        stockProducts: addProducts(
           [...state.stockProducts],
           action.payload.stock
         ),
@@ -59,6 +59,11 @@ function reducer(state = INITIAL_STATE, action) {
     case REMOVE_TO_PLAYER_STOCK:
       return {
         ...state,
+        playerMoney: action.payload.money,
+        stockProducts: removeProducts(
+          [...state.stockProducts],
+          action.payload.stock
+        )
       };
 
     default:
@@ -69,11 +74,21 @@ function reducer(state = INITIAL_STATE, action) {
 export default reducer;
 
 
-
-function buyProducts(stockArray, changeArray) {
+function addProducts(stockArray, changeArray) {
   for (let i = 0; i < stockArray.length; i++) {
     if (stockArray[i].productName === changeArray[0]) {
       const cache = stockArray[i].count + changeArray[1];
+      stockArray[i].count = cache;
+    }
+  }
+
+  return stockArray;
+}
+
+function removeProducts(stockArray, changeArray) {
+  for (let i = 0; i < stockArray.length; i++) {
+    if (stockArray[i].productName === changeArray[0]) {
+      const cache = stockArray[i].count - changeArray[1];
       stockArray[i].count = cache;
     }
   }
