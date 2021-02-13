@@ -4,9 +4,10 @@ import { useDispatch } from "react-redux";
 import StockObject from "./StockObject";
 
 function StockList(props) {
-  const { stock, dispatchProps } = props;
+  const { stock, dispatchProps, reset } = props;
   const dispatch = useDispatch();
   const [productsArray, setProductsArray] = useState([]);
+  const [newStockList, setNewStockList] = useState([])
 
   const addToCart = (event) => {
     if (productsArray.length === 0) {
@@ -38,15 +39,32 @@ function StockList(props) {
     dispatch(dispatchProps(productsArray))
   }, [productsArray, dispatchProps, dispatch])
 
+  useEffect(() => {
+    if (reset) {
+      setProductsArray([])
+      setNewStockList([])
+    }
+  }, [reset])
+
+  useEffect(() => {
+    for (const iterator of stock) {
+      if (iterator.count !== 0) {
+        setNewStockList((state) => [...state, iterator])
+      }
+    }
+  }, [stock])
+
+
   return (
     <>
-      {stock &&
-        stock.map((value) => (
+      {newStockList &&
+        newStockList.map((value) => (
           <StockObject
             key={value.customID}
             id={value.customID}
             productName={value.productName}
             count={value.count}
+            reset={reset}
             price={value.price.basicPrice}
             onChange={addToCart}
           />

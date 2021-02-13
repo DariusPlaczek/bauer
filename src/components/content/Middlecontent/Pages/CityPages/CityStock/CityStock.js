@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import StockList from "../../../Function/Stock/StockList";
 import Trade from "../../../Function/Stock/Trade";
-import {removeToCityStock, addToPlayerStock, addToBuy} from "../../../"
+import { removeToCityStock, addToPlayerStock, addToBuy, resetTradeList } from "../../../"
 
 
 function CityStock() {
@@ -13,16 +13,23 @@ function CityStock() {
   const { buy, sumBuy } = useSelector((state) => state.reduxTrade);
 
   const [disabledButton, setDisabledButton] = useState(false);
+  const [resetInput, setResetInput] = useState(false);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (playerMoney < sumBuy) {
+    if (playerMoney < sumBuy || sumBuy === 0) {
       setDisabledButton(true);
     } else {
       setDisabledButton(false);
     }
   }, [sumBuy, playerMoney]);
+
+  useEffect(() => {
+    if (resetInput) {
+      setResetInput(false)
+    }
+  }, [resetInput])
 
   const trading = () => {
 
@@ -34,7 +41,23 @@ function CityStock() {
         }
       }
     }
+
+    setResetInput(true)
+    dispatch(resetTradeList())
   };
+
+  const hidden = () => {
+    if (sumBuy !== 0) {
+      return (
+      <>
+        <Trade tradeStock={buy} totalSum={sumBuy} />
+        <button disabled={disabledButton} onClick={trading}>VERKAUFEN</button>
+      </>
+      )
+    }
+    return
+  }
+
 
   return (
     <>
@@ -42,12 +65,10 @@ function CityStock() {
       <StockList
         stock={stockProducts}
         dispatchProps={addToBuy}
+        reset={resetInput}
         customID="idCW"
       />
-      <Trade tradeStock={buy} totalSum={sumBuy} />
-      <button disabled={disabledButton} onClick={trading}>
-        KAUFEN
-      </button>
+      {hidden()}
     </>
   );
 }

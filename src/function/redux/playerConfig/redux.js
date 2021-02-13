@@ -35,7 +35,7 @@ const INITIAL_STATE = {
     {
       customID: "CS-03",
       productName: "Gold",
-      count: 3,
+      count: 2,
       price: {
         basicPrice: 110,
       },

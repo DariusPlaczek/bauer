@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useConversion } from "../../../../../directories";
 
 function StockObject(props) {
-  const { id, productName, price, count, onChange } = props;
+  const { id, productName, price, count, onChange, reset } = props;
   const { pfennig, schilling, pfund } = useConversion(price);
   const [useCount, setUseCount] = useState(0);
 
@@ -10,6 +10,14 @@ function StockObject(props) {
     setUseCount(data.target.value);
     onChange([id, productName, data.target.value, price]);
   };
+
+  useEffect(() => {
+    if (reset) {
+      setUseCount(0)
+    }
+    return
+  }, [reset])
+
 
   return (
     <div className="SingleObject-container">
