@@ -17,7 +17,7 @@ function PlayerStock() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (sumSell === 0) {
+    if (sumSell === 0 ) {
       setDisabledButton(true);
     } else {
       setDisabledButton(false);
@@ -26,22 +26,23 @@ function PlayerStock() {
 
   useEffect(() => {
     if (resetInput) {
-      setResetInput(false)
-     }
-  }, [resetInput])
+      setResetInput(false);
+    }
+  }, [resetInput]);
 
   const hidden = () => {
     if (sumSell !== 0) {
       return (
-      <>
-      <Trade tradeStock={sell} totalSum={sumSell} />
-      <button disabled={disabledButton} onClick={trading}>VERKAUFEN</button>
-      </>
-      )
+        <>
+          <Trade tradeStock={sell} totalSum={sumSell} />
+          <button disabled={disabledButton} onClick={trading}>
+            VERKAUFEN
+          </button>
+        </>
+      );
     }
-    return
-  }
-
+    return;
+  };
 
   const trading = () => {
     for (const playerIterator of sell) {
@@ -54,20 +55,14 @@ function PlayerStock() {
             })
           );
 
-          dispatch(
-            addToCityStock([
-              cityIterator.productName,
-              parseInt(playerIterator.count),
-            ])
-          );
-
+          dispatch(addToCityStock([cityIterator.productName, parseInt(playerIterator.count)]));
         }
       }
     }
 
-    setResetInput(true)
-    dispatch(resetTradeList())
-   };
+    setResetInput(true);
+    dispatch(resetTradeList());
+  };
 
   return (
     <>

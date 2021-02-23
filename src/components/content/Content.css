@@ -5,11 +5,11 @@
   /* padding: 50px; */
   width: 100vw;
   height: 100vh;
-  background-color: brown;
+  background-color: #444;
 }
 
 .middlecontent-container {
   height: 95%;
   width: 60%;
-  background-color: burlywood;
+  background-color: rgb(87, 85, 85);
 }
