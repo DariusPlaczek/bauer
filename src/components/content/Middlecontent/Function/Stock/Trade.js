@@ -5,7 +5,7 @@ import MoneyConversion from './MoneyConversion'
 function Trade(props) {
   const { tradeStock, totalSum } = props;
 
-  
+
   return (
     <>
       {tradeStock &&

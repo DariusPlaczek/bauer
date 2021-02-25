@@ -54,7 +54,6 @@ function StockList(props) {
     }
   }, [stock])
 
-
   return (
     <>
       {newStockList &&
