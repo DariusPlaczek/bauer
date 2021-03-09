@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import productList from "../../../../../../config/productList"
 import StockList from "../../../Function/Stock/StockList";
 import Trade from "../../../Function/Stock/Trade";
 import { addToSell, removeToPlayerStock, addToCityStock, resetTradeList } from "../../../";
+
 
 function PlayerStock() {
   const { stockProducts, playerMoney } = useSelector((state) => state.reduxPlayerData);
@@ -15,6 +17,7 @@ function PlayerStock() {
   //const [hidden, setHidden] = useState(true)
 
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     if (sumSell === 0 ) {
@@ -66,7 +69,7 @@ function PlayerStock() {
 
   return (
     <>
-      <h1>PlayerStock</h1>
+      <h1>SPIELERLAGER</h1>
       <StockList
         stock={stockProducts}
         dispatchProps={addToSell}

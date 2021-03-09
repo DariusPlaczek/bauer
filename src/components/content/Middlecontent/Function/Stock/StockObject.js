@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useConversion } from "../../../../../directories";
 
+
 function StockObject(props) {
 
-  const { id, productName, price, count, onChange, reset } = props;
-  const { pfennig, schilling, pfund } = useConversion(price);
+  const { id, productName, price, count, onChange, reset, rarity } = props;
+  const { pfennig, schilling, pfund } = useConversion(price * rarity);
   const [useCount, setUseCount] = useState(0);
 
 

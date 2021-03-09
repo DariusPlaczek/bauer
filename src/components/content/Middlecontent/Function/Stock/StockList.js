@@ -11,6 +11,7 @@ function StockList(props) {
 
   const addToCart = (event) => {
     if (productsArray.length === 0) {
+      console.log(stock);
       setProductsArray([{customID: event[0], productName: event[1], count: event[2], price: {basicPrice:event[3]} }])
       return
     }
@@ -65,6 +66,7 @@ function StockList(props) {
             count={value.count}
             reset={reset}
             price={value.price.basicPrice}
+            rarity={value.price.rarity}
             onChange={addToCart}
           />
         ))}

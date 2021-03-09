@@ -22,6 +22,7 @@ const INITIAL_STATE = {
       count: 52,
       price: {
         basicPrice: 12,
+        rarity: 1
       },
     },
     {
@@ -30,6 +31,7 @@ const INITIAL_STATE = {
       count: 35,
       price: {
         basicPrice: 23,
+        rarity: 1
       },
     },
     {
@@ -38,6 +40,7 @@ const INITIAL_STATE = {
       count: 2,
       price: {
         basicPrice: 110,
+        rarity: 0.1
       },
     },
   ],
