@@ -27,6 +27,7 @@ const mongodbTemplate = new Schema({
     default: Date.now,
   },
   product: [productSchema],
+  
 });
 
 module.exports = mongoose.model("Posts", mongodbTemplate);

@@ -12,9 +12,12 @@ const postsRoute = require("./routes/posts");
 
 app.use("/posts", postsRoute);
 
+
 //ROUTES
 app.get("/", (req, res) => {
   res.send("We are on home");
+  console.log(res)
+  console.log(req)
 });
 
 //Connect to DB
