@@ -1,57 +1,55 @@
-const express = require('express')
-const mongoose = require("mongoose");
-const cors = require("cors");
-const app = express()
-const port = 8080
+import userEvent from '@testing-library/user-event';
+import express from 'express'
+import mongoose from 'mongoose'
+import Cors from 'cors'
 
-//app.use(cors());
+import NewUser from './schemas/firstSchema.js';
 
+
+// App Config
+const app = express();
+const port = process.env.PORT || 8001;
+const connectionUrl = 'mongodb://localhost:27017/test'
+
+// Middlewares
+app.use(express.json())
+app.use(Cors());
+
+
+// DB Config
+mongoose.connect(connectionUrl, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+})
+
+// API Endpoints
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    res.status(200).send('Send')
+
 })
 
-// mongoose.connect("mongodb://localhost:27017/local", {useNewUrlParser: true, useUnifiedTopology: true}, () =>
-//   console.log("connected to DB!")
-// );
+app.post('/addNewUser', (req, res) => {
+    const newUsers = req.body;
 
-const db = mongoose.connection;
-mongoose.connect("mongodb://localhost:27017/test", {useNewUrlParser: true, useUnifiedTopology: true})
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-
-});
-
-app.listen(port, () => {
- // console.log(`Example app listening at http://localhost:${port}`)
+    NewUser.create(newUsers, (err, data) => {
+        if(err) {
+            res.status(500).send(err)
+        } else {
+            res.status(201).send(data)
+        }
+    })
 })
 
-// const express = require("express");
-// const app = express();
-// const mongoose = require("mongoose");
-// const bodyParser = require("body-parser");
-// const cors = require("cors");
-// require("dotenv/config");
+app.get('/addNewUser', (req, res) => {
+    NewUser.find((err, data) => {
+        if(err) {
+            res.status(500).send(err)
+        } else {
+            res.status(200).send(data)
+        }
+    })
+})
 
-// app.use(cors());
-// app.use(bodyParser.json()); 
-
-// const postsRoute = require("./routes/posts");
-
-// app.use("/posts", postsRoute);
-
-
-// //ROUTES
-// app.get("/", (req, res) => {
-//   res.send("We are on home");
-//   console.log(res)
-//   console.log(req)
-// });
-
-// //Connect to DB
-// mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () =>
-//   console.log("connected to DB!")
-// );
-
-// // How to we start listening to the server
-// app.listen(8080);
-
+// Listener
+app.listen(port, () => console.log(`listening on localhost: ${port}`));
