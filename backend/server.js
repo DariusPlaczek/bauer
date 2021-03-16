@@ -51,5 +51,9 @@ app.get('/addNewUser', (req, res) => {
     })
 })
 
+app.get('/removeUser', (req, res) => {
+    NewUser.remove(err) 
+})
+
 // Listener
 app.listen(port, () => console.log(`listening on localhost: ${port}`));
