@@ -55,7 +55,7 @@ function sortOut(value) {
 function calculation(value) {
   let sum = 0;
   for (const iterator of value) {
-    sum = sum + iterator.count * iterator.price.basicPrice;
+    sum = sum + iterator.count * iterator.basicPrice;
   }
   return sum;
 }

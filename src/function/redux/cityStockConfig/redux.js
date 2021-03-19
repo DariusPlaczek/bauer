@@ -1,5 +1,11 @@
+const LOGIN_CITY = "city/LOGIN_CITY"
 const ADD_TO_CITY_STOCK = "city/ADD_TO_CITY_STOCK";
 const REMOVE_TO_CITY_STOCK= "city/REMOVE_TO_CITY_STOCK";
+
+export const loginCity = (event) => ({
+  type: LOGIN_CITY,
+  payload: event
+})
 
 export const addToCityStock = (event) => ({
   type: ADD_TO_CITY_STOCK,
@@ -12,36 +18,17 @@ export const removeToCityStock = (event) => ({
 })
 
 const INITIAL_STATE = {
-  stockProducts: [
-    {
-      customID: "PS-01",
-      productName: "Reis",
-      count: 102,
-      price: {
-        basicPrice: 12,
-      },
-    },
-    {
-      customID: "PS-02",
-      productName: "Malz",
-      count: 76,
-      price: {
-        basicPrice: 23,
-      },
-    },
-    {
-      customID: "PS-03",
-      productName: "Gold",
-      count: 36,
-      price: {
-        basicPrice: 110,
-      },
-    },
-  ],
+  stockProducts: [],
 };
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case LOGIN_CITY:
+      return {
+        ...state,
+        stockProducts: action.payload
+      };
+
     case REMOVE_TO_CITY_STOCK:
       return {...state,
         stockProducts: removeCounts([...state.stockProducts], action.payload),

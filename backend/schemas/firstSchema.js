@@ -6,53 +6,19 @@ const Schema = mongoose.Schema;
 
 const product = new Schema({
     _id: Number,
-    name: String,
+    customID: Number,
+    productName: String,
     count: Number,
-    price: Number,
+    basicPrice: Number,
     cycle: Number
 })
 
-// const playerWare = new Schema(
-//     {
-//         id: {
-//             type: String,
-//             default: "01"
-//         },
-//         name: {
-//             type: String,
-//             default: "Gerste"
-//         },
-//         count: {
-//             type: Number,
-//             default: 100
-//         },
-//         cycle: {
-//             type: Number,
-//             default: 12
-//         }
-//     }, {
-//         id: {
-//             type: String,
-//             default: "02"
-//         },
-//         name: {
-//             type: String,
-//             default: "Roggen"
-//         },
-//         count: {
-//             type: Number,
-//             default: 80
-//         },
-//         cycle: {
-//             type: Number,
-//             default: 14
-//         }
-//     }
-// )
 
 const firstSchema = new Schema({
     name: String,
     password: String,
+    playerMoney: Number,
+    storageSpace: Number,
     userId: {
         type: String,
         default: uuidv4()
@@ -63,7 +29,8 @@ const firstSchema = new Schema({
         default: Date.now
       },
     warehouse: {
-        playerWarehouse: [product]
+        playerWarehouse: [product],
+        cityWarehouse: [product]
     }
     
 })

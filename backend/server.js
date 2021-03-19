@@ -45,16 +45,17 @@ app.get("/addNewUser", (req, res) => {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.status(200).send(data);
+      res.status(200).send(data[0]);
     }
   });
 });
 
-
 // Löschen einer Users
 app.delete("/removeUser", async (req, res) => {
   try {
-    const removedPost = await NewUser.remove({ _id: "605237d1616dc214580e0996" });
+    const removedPost = await NewUser.remove({
+      _id: "605237d1616dc214580e0996",
+    });
     res.json(removedPost);
   } catch (err) {
     res.json({ message: err });
@@ -63,10 +64,12 @@ app.delete("/removeUser", async (req, res) => {
 
 // Update eines Users
 app.patch("/updateUser", async (req, res) => {
+  // res.status(200).send(req);
+
   try {
     const update = await NewUser.updateOne(
-      { _id: '6050e16397cdde9b2129b4b9' },
-      { $set: { name: 'update-User' } }
+      { _id: req.body.id },
+      { $set: { playerMoney: req.body.money, storageSpace: req.body.storage, warehouse: req.body.ware } }
       // { _id: req.params.postId },
       // { $set: { title: req.body.title } }
     );
@@ -74,14 +77,14 @@ app.patch("/updateUser", async (req, res) => {
   } catch (err) {
     res.json({ message: err });
   }
-})
+});
 
 // Update Aller Users
 app.patch("/allUser", async (req, res) => {
   try {
     const update = await NewUser.updateOne(
-      { _id: '6050e16397cdde9b2129b4b9' },
-      { $set: { name: 'updates' } }
+      { _id: "6050e16397cdde9b2129b4b9" },
+      { $set: { name: "updates" } }
       // { _id: req.params.postId },
       // { $set: { title: req.body.title } }
     );
@@ -89,8 +92,7 @@ app.patch("/allUser", async (req, res) => {
   } catch (err) {
     res.json({ message: err });
   }
-})
-
+});
 
 // Listener
 app.listen(port, () => console.log(`listening on localhost: ${port}`));

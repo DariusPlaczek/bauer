@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import productList from "../../../../../../config/productList"
+//import productList from "../../../../../../config/productList"
 import StockList from "../../../Function/Stock/StockList";
 import Trade from "../../../Function/Stock/Trade";
 import { addToSell, removeToPlayerStock, addToCityStock, resetTradeList } from "../../../";

@@ -13,7 +13,7 @@ function Trade(props) {
           <div key={`trade-${value.id}-${key}`}>
             <h2>{value.productName}</h2>
             <h3>{value.count}</h3>
-            <MoneyConversion value={value.price.basicPrice * value.count} />
+            <MoneyConversion value={value.basicPrice * value.count} />
           </div>
         ))}
       Gesamtsumme: <MoneyConversion value={totalSum} />

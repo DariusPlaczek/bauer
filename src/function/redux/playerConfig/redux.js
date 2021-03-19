@@ -1,6 +1,11 @@
+const LOGIN_PLAYER = "/player/LOGIN_PLAYER";
 const ADD_TO_PLAYER_STOCK = "player/ADD_TO_PLAYER_STOCK";
 const REMOVE_TO_PLAYER_STOCK = "player/REMOVE_TO_PLAYER_STOCK";
 
+export const loginPlayer = (event) => ({
+  type: LOGIN_PLAYER,
+  payload: event
+})
 
 export const addToPlayerStock = (event) => ({
   type: ADD_TO_PLAYER_STOCK,
@@ -13,41 +18,24 @@ export const removeToPlayerStock = (event) => ({
 });
 
 const INITIAL_STATE = {
-  playerMoney: 479,
+  playerId: '',
+  playerName: '',
+  playerMoney: 0,
   storageSpace: 0,
-  stockProducts: [
-    {
-      customID: "CS-01",
-      productName: "Reis",
-      count: 52,
-      price: {
-        basicPrice: 12,
-        rarity: 1
-      },
-    },
-    {
-      customID: "CS-02",
-      productName: "Malz",
-      count: 35,
-      price: {
-        basicPrice: 23,
-        rarity: 1
-      },
-    },
-    {
-      customID: "CS-03",
-      productName: "Gold",
-      count: 2,
-      price: {
-        basicPrice: 110,
-        rarity: 0.1
-      },
-    },
-  ],
+  stockProducts: [],
 };
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+
+    case LOGIN_PLAYER:
+      return {
+        ...state,
+        playerId: action.payload.playerId,
+        playerName: action.payload.playerNames,
+        playerMoney: action.payload.playerMoney,
+        stockProducts: action.payload.playerWare
+      };
 
     case ADD_TO_PLAYER_STOCK:
       return {

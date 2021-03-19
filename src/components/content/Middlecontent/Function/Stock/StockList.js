@@ -12,7 +12,7 @@ function StockList(props) {
   const addToCart = (event) => {
     if (productsArray.length === 0) {
       console.log(stock);
-      setProductsArray([{customID: event[0], productName: event[1], count: event[2], price: {basicPrice:event[3]} }])
+      setProductsArray([{customID: event[0], productName: event[1], count: event[2], basicPrice: event[3] }])
       return
     }
 
@@ -32,7 +32,7 @@ function StockList(props) {
       cache[integer].count = event[2];
       setProductsArray(cache);
     } else {
-      setProductsArray([...productsArray, {customID: event[0], productName: event[1], count: event[2], price: {basicPrice:event[3]} }]);
+      setProductsArray([...productsArray, {customID: event[0], productName: event[1], count: event[2], basicPrice: event[3] }]);
     }
   };
 
@@ -65,8 +65,7 @@ function StockList(props) {
             productName={value.productName}
             count={value.count}
             reset={reset}
-            price={value.price.basicPrice}
-            rarity={value.price.rarity}
+            price={value.basicPrice}
             onChange={addToCart}
           />
         ))}
