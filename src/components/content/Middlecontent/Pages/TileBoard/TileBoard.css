@@ -1,0 +1,47 @@
+.buyed-container {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+.style-0, .style-1, .style-99 {
+    width: 62px;
+    height: 62px;
+    border: 1px solid grey;
+  }
+  
+  .style-1 {
+    background-color: indigo;
+  }
+  
+  .style-0 {
+  background-color: maroon;
+  }
+  
+  .style-99 {
+    background-color: hotpink;
+  }
+  
+  .rightSideContainer {
+    display: flex;
+    position: absolute;
+      right: 0;
+    width: 350px;
+    height: 80%;
+    background-color: indianred;
+    padding: 30px;
+  }
+
+.image-product {
+    border: 1px dotted gray;
+    height: 64px;
+    width: 64px;
+    background-color: rgb(192, 92, 92);
+}
+
+.person-card-image {
+    border: 1px dotted gray;
+    width: 150px;
+    height: 220px;
+    background-color: rgb(192, 92, 92);
+}

@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import mongoose from 'mongoose'
 
+
 const Schema = mongoose.Schema;
 
 
@@ -11,6 +12,14 @@ const product = new Schema({
     count: Number,
     basicPrice: Number,
     cycle: Number
+})
+
+const fields = new Schema({
+    id: Number,
+    fieldId: Number,
+    isAktiv: Boolean,
+    image: String,
+    card: String
 })
 
 
@@ -31,8 +40,8 @@ const firstSchema = new Schema({
     warehouse: {
         playerWarehouse: [product],
         cityWarehouse: [product]
-    }
-    
+    },
+    tileBoard: [fields]    
 })
 
 

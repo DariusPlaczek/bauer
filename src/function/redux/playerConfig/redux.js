@@ -23,6 +23,7 @@ const INITIAL_STATE = {
   playerMoney: 0,
   storageSpace: 0,
   stockProducts: [],
+  tileBoard: [],
 };
 
 function reducer(state = INITIAL_STATE, action) {
@@ -34,7 +35,8 @@ function reducer(state = INITIAL_STATE, action) {
         playerId: action.payload.playerId,
         playerName: action.payload.playerNames,
         playerMoney: action.payload.playerMoney,
-        stockProducts: action.payload.playerWare
+        stockProducts: action.payload.playerWare,
+        tileBoard: action.payload.playerTileBoard
       };
 
     case ADD_TO_PLAYER_STOCK:

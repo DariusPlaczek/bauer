@@ -22,6 +22,7 @@ function Login() {
           playerNames: req.data.name,
           playerMoney: req.data.playerMoney,
           playerWare: req.data.warehouse.playerWarehouse,
+          playerTileBoard: req.data.tileBoard
         })
       );
       dispatch(loginCity(req.data.warehouse.cityWarehouse));
@@ -32,7 +33,7 @@ function Login() {
 
   const save = () => {
     const entity = {
-      id: "60532a50399d1cf3f51e355b",
+      id: "60575968665d01b5744f2e51",
       money: playerMoney,
       storage: storageSpace,
       ware: {

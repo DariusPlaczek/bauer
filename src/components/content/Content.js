@@ -30,7 +30,7 @@ function Content() {
           </Switch>
         </div>
 
-        <Rightsidebar />
+        {/* <Rightsidebar /> */}
         
       </Router>
     </div>

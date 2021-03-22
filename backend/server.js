@@ -45,7 +45,7 @@ app.get("/addNewUser", (req, res) => {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.status(200).send(data[0]);
+      res.status(200).send(data[1]);
     }
   });
 });
@@ -83,7 +83,7 @@ app.patch("/updateUser", async (req, res) => {
 app.patch("/allUser", async (req, res) => {
   try {
     const update = await NewUser.updateOne(
-      { _id: "6050e16397cdde9b2129b4b9" },
+      { _id: "60575968665d01b5744f2e51" },
       { $set: { name: "updates" } }
       // { _id: req.params.postId },
       // { $set: { title: req.body.title } }
