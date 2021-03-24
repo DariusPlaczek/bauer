@@ -45,7 +45,7 @@ app.get("/addNewUser", (req, res) => {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.status(200).send(data[1]);
+      res.status(200).send(data[4]);
     }
   });
 });
@@ -69,7 +69,7 @@ app.patch("/updateUser", async (req, res) => {
   try {
     const update = await NewUser.updateOne(
       { _id: req.body.id },
-      { $set: { playerMoney: req.body.money, storageSpace: req.body.storage, warehouse: req.body.ware } }
+      { $set: { playerMoney: req.body.money, storageSpace: req.body.storage, warehouse: req.body.ware, tileBoard: req.body.tBoard } }
       // { _id: req.params.postId },
       // { $set: { title: req.body.title } }
     );
@@ -83,7 +83,7 @@ app.patch("/updateUser", async (req, res) => {
 app.patch("/allUser", async (req, res) => {
   try {
     const update = await NewUser.updateOne(
-      { _id: "60575968665d01b5744f2e51" },
+      { _id: "6058d2c5654e0b1257f413ee" },
       { $set: { name: "updates" } }
       // { _id: req.params.postId },
       // { $set: { title: req.body.title } }

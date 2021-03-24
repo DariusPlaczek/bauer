@@ -5,10 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import axiosy from "../../../../../axios";
 import { loginPlayer } from "../../../../../function/redux/playerConfig/redux";
 import { loginCity } from "../../../../../function/redux/cityStockConfig/redux";
+import { loadTileCard } from "../../../../../function/redux/playerConfig/cardRedux"
 
 function Login() {
   
   const { playerMoney, storageSpace, stockProducts } = useSelector((state) => state.reduxPlayerData)
+  const { tileBoard } = useSelector((state) => state.reduxTileCard)
   const warestockProducts = useSelector((state) => state.reduxCityStoreData.stockProducts)
   const dispatch = useDispatch();
   
@@ -16,30 +18,33 @@ function Login() {
     async function fetchData() {
       const req = await axiosy("/addNewUser");
 
+      dispatch(loadTileCard(req.data.tileBoard))
       dispatch(
         loginPlayer({
           playerId: req.data.userId,
           playerNames: req.data.name,
           playerMoney: req.data.playerMoney,
           playerWare: req.data.warehouse.playerWarehouse,
-          playerTileBoard: req.data.tileBoard
+          //playerTileBoard: req.data.tileBoard
         })
       );
       dispatch(loginCity(req.data.warehouse.cityWarehouse));
     }
+
 
     fetchData();
   };
 
   const save = () => {
     const entity = {
-      id: "60575968665d01b5744f2e51",
+      id: "605a3d6978b1b866ad143844",
       money: playerMoney,
       storage: storageSpace,
       ware: {
         playerWarehouse: stockProducts,
         cityWarehouse: warestockProducts
-      }
+      },
+      tBoard: tileBoard
     }
 
     async function updateEntity() {

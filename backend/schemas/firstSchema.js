@@ -14,12 +14,20 @@ const product = new Schema({
     cycle: Number
 })
 
+const readyCard = new Schema({
+    image: String,
+    alt: String,
+    name: String,
+    zykl: Number
+
+})
+
 const fields = new Schema({
     id: Number,
     fieldId: Number,
     isAktiv: Boolean,
-    image: String,
-    card: String
+    isCard: Boolean,
+    card: [readyCard]
 })
 
 

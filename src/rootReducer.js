@@ -5,6 +5,7 @@ import moneyReducer from './function/redux/gameMoney/redux'
 import playerConfig from './function/redux/playerConfig/redux'
 import cityStoreData from './function/redux/cityStockConfig/redux'
 import tradeReducer from './function/redux/trade/redux'
+import tileCards from './function/redux/playerConfig/cardRedux'
 
 
 const rootReducer = combineReducers({
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   reduxMoney: moneyReducer,
   reduxPlayerData: playerConfig,
   reduxCityStoreData: cityStoreData,
-  reduxTrade: tradeReducer
+  reduxTrade: tradeReducer,
+  reduxTileCard: tileCards
 });
 
 export default rootReducer;
