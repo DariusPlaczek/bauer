@@ -18,7 +18,8 @@ const readyCard = new Schema({
     image: String,
     alt: String,
     name: String,
-    zykl: Number
+    zykl: Number,
+    count: Number
 
 })
 
