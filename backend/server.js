@@ -64,7 +64,6 @@ app.delete("/removeUser", async (req, res) => {
 
 // Update eines Users
 app.patch("/updateUser", async (req, res) => {
-  // res.status(200).send(req);
 
   try {
     const update = await NewUser.updateOne(
