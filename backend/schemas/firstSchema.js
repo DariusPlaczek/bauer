@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 
 const product = new Schema({
     _id: Number,
+    productID: String, 
     customID: Number,
     productName: String,
     count: Number,
@@ -15,12 +16,12 @@ const product = new Schema({
 })
 
 const readyCard = new Schema({
+    productID: String,
     image: String,
     alt: String,
     name: String,
     zykl: Number,
     count: Number
-
 })
 
 const fields = new Schema({
@@ -32,11 +33,20 @@ const fields = new Schema({
 })
 
 
+const dates = new Schema({
+    day: Number,
+    month: Number,
+    year: Number
+})
+
+
 const firstSchema = new Schema({
     name: String,
     password: String,
     playerMoney: Number,
     storageSpace: Number,
+    gameDate: [dates],
+    language: String,
     userId: {
         type: String,
         default: uuidv4()

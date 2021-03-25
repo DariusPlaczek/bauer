@@ -69,7 +69,13 @@ app.patch("/updateUser", async (req, res) => {
   try {
     const update = await NewUser.updateOne(
       { _id: req.body.id },
-      { $set: { playerMoney: req.body.money, storageSpace: req.body.storage, warehouse: req.body.ware, tileBoard: req.body.tBoard } }
+      { $set: { 
+        playerMoney: req.body.money, 
+        storageSpace: req.body.storage, 
+        gameDate: req.body.gameDate,
+        warehouse: req.body.ware, 
+        tileBoard: req.body.tBoard 
+      } }
       // { _id: req.params.postId },
       // { $set: { title: req.body.title } }
     );
