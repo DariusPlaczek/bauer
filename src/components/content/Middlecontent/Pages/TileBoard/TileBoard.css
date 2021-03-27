@@ -33,9 +33,10 @@
   .rightSideContainer {
     display: flex;
     position: absolute;
-      right: 0;
-    width: 350px;
-    height: 80%;
+    right: 25px;
+    bottom: 25px;
+    width: 250px;
+    height: 50%;
     background-color: indianred;
     padding: 30px;
   }

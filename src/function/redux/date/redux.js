@@ -1,5 +1,7 @@
+const LOAD_DATE = "date/LOAD_DATE"
 const Add_New_Day = "date/Add_New_Day";
 
+export const loadDate = (event) => ({ type: LOAD_DATE, payload: event })
 export const addDay = () => ({ type: Add_New_Day });
 
 const INITIAL_STATE = {
@@ -11,6 +13,14 @@ const INITIAL_STATE = {
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+
+    case LOAD_DATE: 
+      return {
+        day: action.payload.loadDate.day,
+        month: action.payload.loadDate.month,
+        year: action.payload.loadDate.year,
+      }
+
     case Add_New_Day:
         if (state.month === 11 && state.day === 4) {
           return {

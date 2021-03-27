@@ -13,12 +13,20 @@ function Content() {
   return (
     <div className="main-container">
       <Router>
-
-        <Leftsidebar />
+        {/* <Leftsidebar /> */}
 
         <div className="middlecontent-container">
+          <div className="topbar-clock-container">
+            <div className="topbar-clock ">
+              <div className="img-topbar-clock">
+                <h5>CHRISTMOND 1600 A.D.</h5>
+              </div>
+            </div>
+            {/* <div className="wall"></div> */}
+            <div className="wall-01"></div>
+          </div>
           <Switch>
-            <Route path="/playerstock">
+            {/* <Route path="/playerstock">
               <PlayerStock />
             </Route>
             <Route path="/citystock">
@@ -26,12 +34,11 @@ function Content() {
             </Route>
             <Route exact path="/">
               <Home />
-            </Route>
+            </Route> */}
           </Switch>
         </div>
 
         {/* <Rightsidebar /> */}
-        
       </Router>
     </div>
   );

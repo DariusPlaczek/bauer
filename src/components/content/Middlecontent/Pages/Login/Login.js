@@ -6,12 +6,14 @@ import axiosy from "../../../../../axios";
 import { loginPlayer } from "../../../../../function/redux/playerConfig/redux";
 import { loginCity } from "../../../../../function/redux/cityStockConfig/redux";
 import { loadTileCard } from "../../../../../function/redux/playerConfig/cardRedux"
+import { loadDate } from "../../../../../function/redux/date/redux"
 
 function Login() {
   
   const { playerMoney, storageSpace, stockProducts } = useSelector((state) => state.reduxPlayerData)
   const { tileBoard } = useSelector((state) => state.reduxTileCard)
   const warestockProducts = useSelector((state) => state.reduxCityStoreData.stockProducts)
+  const { day, month, year } = useSelector((state) => state.reduxDate)
   const dispatch = useDispatch();
   
   const login = () => {
@@ -25,10 +27,10 @@ function Login() {
           playerNames: req.data.name,
           playerMoney: req.data.playerMoney,
           playerWare: req.data.warehouse.playerWarehouse,
-          //playerTileBoard: req.data.tileBoard
         })
       );
       dispatch(loginCity(req.data.warehouse.cityWarehouse));
+      dispatch(loadDate({ loadDate: req.data.gameDate[0] }))
     }
 
 
@@ -40,6 +42,11 @@ function Login() {
       id: "605a3d6978b1b866ad143844",
       money: playerMoney,
       storage: storageSpace,
+      gameDate: {
+        day: day,
+        month: month,
+        year: year
+      },
       ware: {
         playerWarehouse: stockProducts,
         cityWarehouse: warestockProducts

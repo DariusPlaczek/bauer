@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { language, monthNames } from "../../../../../directories";
 import { addDay } from "../../../../../executeRedux";
+import {deductCycle} from "../../../../../function/redux/playerConfig/cardRedux"
 
 function GameDate() {
   const { month, year } = useSelector((state) => state.reduxDate);
@@ -15,6 +16,7 @@ function GameDate() {
   const activeButton = () => {
     setIsButton(true);
     dispatch(addDay());
+    dispatch(deductCycle());
 
     setTimeout(() => {
       setIsButton(false);

@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import TileCard from "./TileCard";
 
 import productList from '../../../../../config/productList'
-import { addNewTileCard } from '../../../../../function/redux/playerConfig/cardRedux'
+import { addNewTileCard, setTileCardZero } from '../../../../../function/redux/playerConfig/cardRedux'
+import {addWareFromTileCard} from '../../../../../function/redux/playerConfig/redux'
 
 import "./TileBoard.css";
 
@@ -54,6 +55,9 @@ function TileBoard() {
           <div className="tileboard-card"><img src={entiti.card[0].image} alt={entiti.card[0].alt} /></div>
           <h5>{entiti.card[0].name}</h5>
           <h6>{entiti.card[0].zykl}</h6>
+          <h6>{entiti.card[0].count}</h6>
+          
+          {entiti.card[0].zykl === 0 ? <button id={entiti.id} onClick={(event) => addToWarehouse(event.target.id)} >Verschiebe ins Lager</button> : <></>}
 
         </div>
       )
@@ -61,30 +65,9 @@ function TileBoard() {
 
   }
 
-  const isbuyed = () => {
-      // if (entiti.isCard) {
-      //   return (
-      //       <div className="buyed-container">
-      //           <div className="image-product"></div>
-      //           <h3>Name: Hafer</h3>
-      //           <h3>Name: Hafer</h3>
-      //           <h3>Name: Hafer</h3>
-      //           <div className="person-card-image"></div>
-      //       </div>
-      //   )
-      // }
-
-      // return ( 
-      // <>
-      //   {productList.map((value) => 
-      //   <>
-      //     <div>{value.name}</div>
-      //     <button onClick={addNewFileCard}>hinzufügen</button> 
-      //   </>
-      //   )}
-      // </>
-      // ) 
-
+  const addToWarehouse = (event) => {
+    dispatch(addWareFromTileCard({productId: entiti.card[0].productID, productCount: entiti.card[0].count}))
+    dispatch(setTileCardZero({setId: parseInt(event)}))
   }
 
   return (

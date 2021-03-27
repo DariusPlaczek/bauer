@@ -1,24 +1,30 @@
 const productList = [
   {
    id: 'P01',
+   productID: "R01",
    name: 'Hirse',
    weight: 2,
-   cycle: 14,
-   img: "/Images/weizen.png"
+   cycle: 8,
+   img: "/Images/weizen.png",
+   count: 52
   },
   {
     id: 'P02',
+    productID: "R02",
     name: 'Roggen',
     weight: 2,
-    cycle: 16,
-    img: "/Images/weizen.png"
+    cycle: 6,
+    img: "/Images/weizen.png",
+    count: 32
    },
    {
     id: 'P03',
+    productID: "R03",
     name: 'Weizen',
     weight: 2,
-    cycle: 17,
-    img: "/Images/weizen.png"
+    cycle: 4,
+    img: "/Images/weizen.png",
+    count: 70
    }
 ];
 
