@@ -1,43 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 
+h5 {
+  text-transform: uppercase;
+
+}
 
 .main-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   /* padding: 50px; */
   width: 100vw;
   height: 100vh;
-  background-color: #4e4556;
+  background-color: #222;
+
 }
 
-.topbar-clock-container {
+.topbar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-direction: row;
+  height: 49px;
   width: 100%;
-  height: 66px;
 }
 
-.topbar-clock {
-  height: 29px;
-  width: 193px;
+.topbar-left {
+  background-image: url(/src/assets/images/topbar-left.gif);
+  height: 49px;
+  width: 15px;
+  background-repeat: no-repeat;
+}
+
+.topbar-middle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-image: url(/src/assets/images/topbar-middle.gif);
+  height: 49px;
+  width: 100%;
+  background-repeat: repeat;
+}
+
+.topbar-right {
+  background-image: url(/src/assets/images/topbar-right.gif);
+  height: 49px;
+  width: 15px;
+  background-repeat: no-repeat;
+}
+
+.uhr-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 180px;
+  height: auto;
+top: 2px;
+}
+
+.uhr-container h5 {
+  color: white;
+}
+
+.next-day-button  {
+  position: absolute;
+  z-index: 30;
+  top: 15px;
 
 }
 
-.img-topbar-clock {
+.uhr-drehscheibe {
+  position: absolute;
+  width: 146px;
+  height: 146px;
+  background-image: url(/src/assets/images/uhr-drehscheibe.gif);
+  z-index: 1;
+  top: 14px;
+}
+
+.next-day {
+  position: absolute;
+  width: 178px;
+  height: 163px;
+  background-image: url(/src/assets/images/uhr-rahmen.gif);
+  z-index: 20;
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 110px;
+}
+
+.dateform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 210;
+
+}
+
+.img-dateform {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url(/src/assets/images/tafel.png);
+  background-image: url(/src/assets/images/tafel-02.gif);
   background-repeat: no-repeat;
 
-  width: 193px;
-  height: 32px;
-  /* width: 386px;
-  height: 64px; */
+  width: 210px;
+  height: 38px;
 }
 
 .middlecontent-container {
@@ -49,14 +125,47 @@
   width: 100%;
 }
 
-.wall {
-  width: 100%;
-  height: 34px;
-  background-image: url(/src/assets/images/wand-01.png);
+
+.bnt-container {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  width: auto;
+  height: 40px;
+  /* cursor: pointer; */
 }
 
-.wall-01 {
-  width: 100%;
-  height: 34px;
-  background-image: url(/src/assets/images/wand.png);
+.btn-left {
+  background-image: url(/src/assets/images/btn/btn-small-left.gif);
+  height: 40px;
+  width: 21px;
+  background-repeat: no-repeat;
 }
+
+.btn-middle {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-image: url(/src/assets/images/btn/btn-small-mitte.gif);
+  width: auto;
+  height: 40px;
+  background-repeat: repeat;
+  padding: 0 15px;
+}
+
+.btn-right {
+  background-image: url(/src/assets/images/btn/btn-small-right.gif);
+  height: 40px;
+  width: 21px;
+  background-repeat: no-repeat;
+}
+
+.pfennig {
+  background-image: url(/src/assets/images/pfennig-big.gif);
+  height: 25px;
+  width: 25px;
+
+  background-repeat: no-repeat;
+}
+
+/* TOPBAR MONEY */

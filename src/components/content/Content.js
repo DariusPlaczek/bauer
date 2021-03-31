@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+
 import "./Content.css";
 
 import Leftsidebar from "./Leftsidebar/Leftsidebar";
@@ -9,22 +11,28 @@ import Home from "./Middlecontent/Home/Home";
 import PlayerStock from "./Middlecontent/Pages/PlayerPages/PlayerStock/PlayerStock";
 import CityStock from "./Middlecontent/Pages/CityPages/CityStock/CityStock";
 
+import GameClock from '../GameClock/GameClock';
+import DateForm from './Assets/DateForm/DateForm';
+import Money from './Topbar/Money/Money'
+
 function Content() {
   return (
     <div className="main-container">
       <Router>
         {/* <Leftsidebar /> */}
-
-        <div className="middlecontent-container">
-          <div className="topbar-clock-container">
-            <div className="topbar-clock ">
-              <div className="img-topbar-clock">
-                <h5>CHRISTMOND 1600 A.D.</h5>
-              </div>
-            </div>
-            {/* <div className="wall"></div> */}
-            <div className="wall-01"></div>
+        <div className="topbar">
+          <div className="topbar-left"></div>
+          <div className="topbar-middle">
+            <Money />
           </div>
+          <div className="topbar-right"></div>
+        </div>
+
+        <GameClock />
+        <div className="middlecontent-container">
+          <div className="date-container"></div>
+          <DateForm />
+
           <Switch>
             {/* <Route path="/playerstock">
               <PlayerStock />

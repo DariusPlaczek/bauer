@@ -48,7 +48,7 @@
   height: 1px;
   transform: rotate(90deg);
   transform-origin: 100%;
-background: linear-gradient(to right,  rgba(255,0,0,0) 0%, rgba(255,0,0,0) 40%,  black 40%,  black 100%); 
+background: linear-gradient(to right,  rgba(255,0,0,0) 0%, rgba(255,0,0,0) 40%,  black 40%,  black 100%);
   border: 3px solid black;
 } */
 
@@ -72,67 +72,67 @@ background: linear-gradient(to right,  rgba(255,0,0,0) 0%, rgba(255,0,0,0) 40%, 
 }
 
 .deg45 {
-  transform: rotateZ(45deg);
+  transform: rotateZ(0deg);
   animation: rotate 2s linear;
 }
 
 @keyframes rotate {
   0% {
-    transform: rotateZ(315deg);
+    transform: rotateZ(270deg);
   }
-  50% {
+  /* 50% {
     transform: rotateZ(360deg);
-  }
-  50.000000001% {
-    transform: rotateZ(0deg);
+  } */
+  99.999999% {
+    transform: rotateZ(360deg);
   }
 
   100% {
-    transform: 100% rotateZ(45deg);
+    transform: 100% rotateZ(0deg);
   }
-} 
+}
 
 .deg135 {
-  transform: rotateZ(135deg);
+  transform: rotateZ(90deg);
   animation: rotate135 2s linear;
 }
 
 @keyframes rotate135 {
   0% {
-    transform: rotateZ(45deg);
+    transform: rotateZ(0deg);
   }
 
   100% {
-    transform: rotateZ(135deg);
+    transform: rotateZ(90deg);
   }
 }
 
 .deg225 {
-  transform: rotateZ(225deg);
+  transform: rotateZ(180deg);
   animation: rotate225 2s linear;
 }
 
 @keyframes rotate225 {
   0% {
-    transform: rotateZ(135deg);
+    transform: rotateZ(90deg);
   }
 
   100% {
-    transform: rotateZ(225deg);
+    transform: rotateZ(180deg);
   }
 }
 
 .deg315 {
-  transform: rotateZ(315deg);
+  transform: rotateZ(270deg);
   animation: rotate315 2s linear;
 }
 
 @keyframes rotate315 {
   0% {
-    transform: rotateZ(225deg);
+    transform: rotateZ(180deg);
   }
 
   100% {
-    transform: rotateZ(315deg);
+    transform: rotateZ(270deg);
   }
 }
