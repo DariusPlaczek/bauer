@@ -1,0 +1,95 @@
+.design-middle {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: 100%;
+    /* background-color: #ebcdc3; */
+    border-radius: 10px;
+}
+
+.top-middle {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15px;
+}
+
+.center-middle {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-middle {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15px;
+}
+
+.m-top-left {
+    background-image: url(/src/assets/images/middle-content/middle-left-top.gif);
+    height: 15px;
+    width: 15px;
+    background-repeat: no-repeat;
+}
+
+.m-top-middle {
+    background-image: url(/src/assets/images/middle-content/middle-middle-top.gif);
+    height: 15px;
+    width: 100%;
+    background-repeat: repeat;
+}
+
+.m-top-right {
+    background-image: url(/src/assets/images/middle-content/middle-right-top.gif);
+    height: 15px;
+    width: 15px;
+    background-repeat: no-repeat;
+}
+
+/* MITTE */
+
+.m-center-left {
+    background-image: url(/src/assets/images/middle-content/middle-left-middle.gif);
+    height: 100%;
+    width: 15px;
+    background-repeat: repeat;
+}
+
+.m-center-middle {
+    height: 100%;
+    width: 100%;
+    background-color: #EBCDC3;
+}
+
+.m-center-right {
+    background-image: url(/src/assets/images/middle-content/middle-right-middle.gif);
+    height: 100%;
+    width: 15px;
+    background-repeat: repeat;
+}
+
+/* BOTTOM */
+
+.m-bottom-left {
+    background-image: url(/src/assets/images/middle-content/middle-left-bottom.gif);
+    height: 15px;
+    width: 15px;
+    background-repeat: no-repeat;
+}
+
+.m-bottom-middle {
+    background-image: url(/src/assets/images/middle-content/middle-middle-bottom.gif);
+    height: 15px;
+    width: 100%;
+    background-repeat: repeat;
+}
+
+.m-bottom-right {
+    background-image: url(/src/assets/images/middle-content/middle-right-bottom.gif);
+    height: 15px;
+    width: 15px;
+    background-repeat: no-repeat;
+}
