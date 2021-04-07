@@ -68,7 +68,7 @@ top: 2px;
 .next-day-button  {
   position: absolute;
   z-index: 30;
-  top: 15px;
+  top: 7px;
 
 }
 
@@ -133,9 +133,11 @@ top: 2px;
   flex-direction: row;
   justify-items: center;
   width: auto;
-  height: 40px;
+  height: 31px;
   /* cursor: pointer; */
 }
+
+/* Button small */
 
 .btn-left {
   background-image: url(/src/assets/images/btn/btn-small-left.gif);
@@ -161,6 +163,34 @@ top: 2px;
   width: 21px;
   background-repeat: no-repeat;
 }
+
+/* Button middle */
+
+.btn-middle-left {
+  background-image: url(/src/assets/images/btn/btn-middle-left.gif);
+  height: 31px;
+  width: 14px;
+  background-repeat: no-repeat;
+}
+
+.btn-middle-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/src/assets/images/btn/btn-middle-center.gif);
+  padding: 0 15px;
+  height: 31px;
+  width: 100%;
+  background-repeat: repeat;
+}
+
+.btn-middle-right {
+  background-image: url(/src/assets/images/btn/btn-middle-right.gif);
+  height: 31px;
+  width: 14px;
+  background-repeat: no-repeat;
+}
+
 
 .pfennig {
   background-image: url(/src/assets/images/pfennig-big.gif);

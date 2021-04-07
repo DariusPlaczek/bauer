@@ -28,11 +28,11 @@ export default function BtnFirst(props) {
 
   return (
     <div className="bnt-container" style={styles} onClick={activeButton}>
-      <div className="btn-left"></div>
-      <div className="btn-middle">
+      <div className="btn-middle-left"></div>
+      <div className="btn-middle-center">
         <h5>{btnText}</h5>
       </div>
-      <div className="btn-right"></div>
+      <div className="btn-middle-right"></div>
     </div>
   );
 }

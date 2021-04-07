@@ -19,7 +19,6 @@ function Content() {
   return (
     <div className="main-container">
       <Router>
-        {/* <Leftsidebar /> */}
         <div className="topbar">
           <div className="topbar-left"></div>
           <div className="topbar-middle">
@@ -27,7 +26,6 @@ function Content() {
           </div>
           <div className="topbar-right"></div>
         </div>
-
         <GameClock />
         <div className="date-container"></div>
         <DateForm />
@@ -49,21 +47,20 @@ function Content() {
               <div className="m-bottom-right"></div>
             </div>
           </div>
-
-          <Switch>
-            {/* <Route path="/playerstock">
-              <PlayerStock />
-            </Route>
-            <Route path="/citystock">
-              <CityStock />
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route> */}
-          </Switch>
         </div>
-
-        {/* <Rightsidebar /> */}
+        <Leftsidebar />
+        {/* <Switch>
+          <Route path="/playerstock">
+            <PlayerStock />
+          </Route>
+          <Route path="/citystock">
+            <CityStock />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+        <Rightsidebar /> */}
       </Router>
     </div>
   );
