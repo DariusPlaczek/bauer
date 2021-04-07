@@ -1,0 +1,13 @@
+.content-single-button-left {
+    background-image: url(/src/assets/images/btn/content-button-red-left.gif);
+    height: 32px;
+    width: 21px;
+    background-repeat: repeat;
+}
+
+.content-single-button-right {
+    background-image: url(/src/assets/images/btn/content-button-red-right.gif);
+    height: 32px;
+    width: 11px;
+    background-repeat: no-repeat;
+}

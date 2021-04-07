@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Content.css";
 import "./HomeMiddle.css";
 
+import ContentButtons from "../ContentButtons/ContentButtons"
+
 import Leftsidebar from "./Leftsidebar/Leftsidebar";
 import Rightsidebar from "./Rightsidebar/Rightsidebar";
 
@@ -18,6 +20,7 @@ import Money from "./Topbar/Money/Money";
 function Content() {
   return (
     <div className="main-container">
+
       <Router>
         <div className="topbar">
           <div className="topbar-left"></div>
@@ -49,6 +52,7 @@ function Content() {
           </div>
         </div>
         <Leftsidebar />
+        <ContentButtons />
         {/* <Switch>
           <Route path="/playerstock">
             <PlayerStock />
