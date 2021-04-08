@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import "./App.css";
 
 import rootReducer from "./rootReducer";
-import Content from "./components/content/Content";
+import Maincontent from "./Content/Maincontent/Maincontent";
 
 //const store = createStore(rootReducer);
 
@@ -15,7 +15,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="game-container">
-        <Content />
+        <Maincontent />
       </div>
     </Provider>
   );

@@ -1,0 +1,9 @@
+.navigations-container {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30%;
+  width: auto;
+}
