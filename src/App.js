@@ -2,6 +2,7 @@ import React from "react";
 import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
 import "./App.css";
+import "./flexibleContainer.css";
 
 import rootReducer from "./rootReducer";
 import Maincontent from "./Content/Maincontent/Maincontent";

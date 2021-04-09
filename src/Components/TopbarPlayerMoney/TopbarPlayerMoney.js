@@ -9,15 +9,11 @@ function TopbarPlayerMoney() {
   const { pfennig, schilling, pfund } = useConversion(playerMoney);
 
   return (
-    <>
-      <div className="money-left"></div>
-      <div className="money-middle">
-        <div className="pfund-icon">{pfund}</div>
-        <div className="schilling-icon">{schilling}</div>
-        <div className="pfennig-icon">{pfennig}</div>
-      </div>
-      <div className="money-right"></div>
-    </>
+        <div className="inner-frame-container player-money-container" >
+          <div className="pfund-icon">{pfund}</div>
+          <div className="schilling-icon">{schilling}</div>
+          <div className="pfennig-icon">{pfennig}</div>
+        </div>
   );
 }
 

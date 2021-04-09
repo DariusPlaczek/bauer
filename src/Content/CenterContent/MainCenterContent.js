@@ -1,13 +1,15 @@
 import React from "react";
 
-import QuaderContainer from '../../Components/QuaderContainer/QuaderContainer'
-import './MainCenterContent.css'
+import "./MainCenterContent.css";
 
 function MainCenterContent() {
   return (
-    <>
-      <QuaderContainer />
-    </>
+
+      <div
+        className="quader-out-frame-container"
+        style={{ width: "100%", height: "100%" }}
+      ></div>
+
   );
 }
 

@@ -1,0 +1,59 @@
+* {
+  /* remove outline effect for input elements etc */
+  outline: none;
+  /* prevent dragging */
+  user-drag: none;
+  -webkit-user-drag: none;
+  /* prevent text selecting */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  /* pixelated enlargement filter (to keep the pixel-art style when enlarging pictures) */
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: pixelated;
+  /* default font */
+  font-family: "Press Start 2P", cursive;
+}
+
+.quader-out-frame-container {
+  border-style: solid;
+  border-image-source: url("/src/assets/images/inner/quader-out-frame.gif");
+  border-image-repeat: repeat;
+  border-image-slice: 15 15 15 15;
+  border-image-width: 15px;
+  border-width: 11px;
+  /* internal border */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* background */
+  background: url("/src/assets/images/inner/quader-out-background.gif") repeat repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+}
+
+.inner-frame-container {
+  border-style: solid;
+  border-image-source: url("/src/assets/images/inner/inner-table-border.gif");
+  border-image-repeat: repeat;
+  border-image-slice: 6 6 6 6;
+  border-image-width: 12px;
+  border-width: 6px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* background: url("/src/assets/images/test/test-background.gif") repeat repeat; */
+  background-color: #deac9b;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+}

@@ -1,28 +1,10 @@
-.money-left {
-  background-image: url(/src/assets/images/topbar-board-left.gif);
-  height: 31px;
-  width: 5px;
-  background-repeat: no-repeat;
-}
-
-.money-middle {
+.player-money-container {
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
-  background-image: url(/src/assets/images/topbar-board-middle.gif);
-  width: auto;
-  height: 31px;
-  background-repeat: repeat;
+  height: 39px;
   padding: 0 15px;
 }
-
-.money-right {
-  background-image: url(/src/assets/images/topbar-board-right.gif);
-  height: 31px;
-  width: 5px;
-  background-repeat: no-repeat;
-}
-
 
 .pfund-icon::before {
   content: "";

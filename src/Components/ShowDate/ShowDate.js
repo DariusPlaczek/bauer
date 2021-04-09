@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-import { monthNames } from "../../directories"
+import { monthNames } from "../../directories";
 //import { addDay } from "../../executeRedux";
-
 
 function ShowDate() {
   const { month, year } = useSelector((state) => state.reduxDate);
@@ -19,11 +18,14 @@ function ShowDate() {
 
   return (
     <div className="date-form-container">
-      <div className="date-form-left"></div>
-      <div className="date-form-center">
-        <h4>{`${monthNames[monthTrigger].month} - ${yearTrigger}`} A.D.</h4>
+      <div className="quader-bottom-connection">
+        <div
+          className="inner-framed-container inner-framed"
+          style={{ width: "270px", padding: "0 25px"}}
+        >
+          <h4>{`${monthNames[monthTrigger].month} - ${yearTrigger}`} A.D.</h4>
+        </div>
       </div>
-      <div className="date-form-right"></div>
     </div>
   );
 }

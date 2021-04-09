@@ -1,28 +1,9 @@
-.col-33 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100%;
-  width: 33.33%;
+.main-topbar-container {
+  height: 49px;
+  width: 100vw;
 }
 
-.left-align {
+.topbar-container {
   display: flex;
-  justify-content:flex-start;
-  align-items: center;
-  flex-direction: row;
 }
 
-.center-align {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
-.center-align {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex-direction: row;
-}

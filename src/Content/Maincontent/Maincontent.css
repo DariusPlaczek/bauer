@@ -20,11 +20,6 @@ h5 {
 
 }
 
-.main-topbar-container {
-  height: 49px;
-  width: 100vw;
-
-}
 
 .main-middle-container {
   display: flex;
@@ -44,9 +39,8 @@ h5 {
 
 .main-middle-left-container {
   display: flex;
-  height: calc(100% -46px);
   width: 25%;
-  margin-top: 46px;
+  margin-top: 90px;
 }
 
 .main-middle-center-container {
@@ -59,7 +53,6 @@ h5 {
 
 .main-middle-right-container {
   display: flex;
-  height: calc(100% -46px);
   width: 25%;
   margin-top: 46px;
   /* background-color: darkmagenta; */
@@ -96,43 +89,6 @@ h5 {
   background-repeat: no-repeat;
 }
 
-.uhr-container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 180px;
-  height: auto;
-top: 2px;
-}
-
-.uhr-container h5 {
-  color: white;
-}
-
-.next-day-button  {
-  position: absolute;
-  z-index: 30;
-  top: 7px;
-
-}
-
-.uhr-drehscheibe {
-  position: absolute;
-  width: 146px;
-  height: 146px;
-  background-image: url(/src/assets/images/uhr-drehscheibe.gif);
-  z-index: 1;
-  top: -15px;
-}
-
-.next-day {
-  position: absolute;
-  width: 172px;
-  height: 139px;
-  background-image: url(/src/assets/images/uhr-rahmen.gif);
-  z-index: 20;
-  top: -6px;
-}
 
 .date-container {
   display: flex;
@@ -234,7 +190,6 @@ top: 2px;
   background-repeat: no-repeat;
 }
 
-
 .pfennig {
   background-image: url(/src/assets/images/pfennig-big.gif);
   height: 25px;
@@ -248,40 +203,15 @@ top: 2px;
 .date-form-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 53px;
   width: auto;
   margin-bottom: -8px;
   z-index: 2;
   text-transform: uppercase;
-
   color: tranparent;
   text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
-}
-
-.date-form-left {
-  background-image: url(/src/assets/images/middle-date-left.gif);
-  height: 53px;
-  width: 28px;
-  background-repeat: no-repeat;
-}
-
-.date-form-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(/src/assets/images/middle-date-center.gif);
-  height: 53px;
-  width: 100%;
-  min-width: 250px;
-  background-repeat: repeat;
-}
-
-.date-form-right {
-  background-image: url(/src/assets/images/middle-date-right.gif);
-  height: 53px;
-  width: 31px;
-  background-repeat: no-repeat;
 }
