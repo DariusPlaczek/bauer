@@ -10,9 +10,9 @@ function TopbarPlayerMoney() {
 
   return (
         <div className="inner-frame-container player-money-container" >
-          <div className="pfund-icon">{pfund}</div>
-          <div className="schilling-icon">{schilling}</div>
-          <div className="pfennig-icon">{pfennig}</div>
+          <div className="m-pfund-icon"><h5>{pfund}</h5></div>
+          <div className="m-schilling-icon"><h5>{schilling}</h5></div>
+          <div className="m-pfennig-icon"><h5>{pfennig}</h5></div>
         </div>
   );
 }

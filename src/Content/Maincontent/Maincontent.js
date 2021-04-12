@@ -29,7 +29,7 @@ function Maincontent() {
         <div className="main-topbar-container">
           <Topbar />
         </div>
-        {/* <div className="main-middle-container">
+         <div className="main-middle-container">
           <div className="main-middle-navigation-container">
             <Navigation />
           </div>
@@ -45,12 +45,12 @@ function Maincontent() {
             </Switch>
           </div>
           <div className="main-middle-center-container">
-            <ShowDate />
+            {/* <ShowDate />*/}
             <MainCenterContent />
           </div>
           <div className="main-middle-right-container"></div>
           <div className="main-middle-navigation-container"></div>
-        </div> */}
+        </div>
 
         {/*
 

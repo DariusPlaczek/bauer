@@ -20,7 +20,7 @@
   image-rendering: -o-crisp-edges;
   image-rendering: pixelated;
   /* default font */
-  font-family: "Press Start 2P", cursive;
+  font-family: "Press Start 2P", normal;
 }
 
 .quader-out-frame-container {
@@ -41,6 +41,11 @@
   background-position: center;
 }
 
+.inner-frame-container.custom-warehouse {
+  height: 87px;
+  width: 100%;
+}
+
 .inner-frame-container {
   border-style: solid;
   border-image-source: url("/src/assets/images/inner/inner-table-border.gif");
@@ -53,6 +58,25 @@
   -webkit-box-sizing: border-box;
   /* background: url("/src/assets/images/test/test-background.gif") repeat repeat; */
   background-color: #deac9b;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+}
+
+.quader-bottom-connection {
+  border-style: solid;
+  border-image-source: url("/src/assets/images/inner/topRound-bottomVerbindung.gif");
+  border-image-repeat: repeat;
+  border-image-slice: 23;
+  border-image-width: 23px;
+  border-width: 23px;
+  /* internal border */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* background */
+  /* background: url("/src/assets/images/test/background-image-golden.png") repeat repeat; */
+  background-color: #ebcdc3;
   background-clip: padding-box;
   background-origin: padding-box;
   background-position: center;

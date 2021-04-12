@@ -6,53 +6,135 @@
   padding: 0 15px;
 }
 
-.pfund-icon::before {
+/*************** MIDDLE MONEY ICON - TEXT *********************/
+
+.m-pfund-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+}
+
+.m-pfund-icon::before {
   content: "";
   background-image: url(/src/assets/images/pfund-middle.gif);
   background-repeat: no-repeat;
   height: 20px;
   width: 20px;
-  padding: 2px 25px 2px 0;
+  padding: 0px 7px 2px 0px;
 }
 
-.pfund-icon::after {
+.m-pfund-icon::after {
   content: "";
   border-right: 1px solid #c59889;
   height: 20px;
   padding-left: 10px;
 }
 
-
-.schilling-icon {
-    padding-left: 10px;
+.m-schilling-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+  padding-left: 10px;
 }
 
-.schilling-icon::before {
+.m-schilling-icon::before {
   content: "";
   background-image: url(/src/assets/images/schilling-middle.gif);
   background-repeat: no-repeat;
   height: 20px;
   width: 20px;
-  padding: 2px 25px 2px 0;
+  padding: 0px 7px 2px 0px;
 }
 
-.schilling-icon::after {
+.m-schilling-icon::after {
   content: "";
   border-right: 1px solid #c59889;
   height: 20px;
   padding-left: 10px;
 }
 
-.pfennig-icon {
-    padding-left: 10px;
+.m-pfennig-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+  padding-left: 10px;
 }
 
-.pfennig-icon::before {
+.m-pfennig-icon::before {
   content: "";
   background-image: url(/src/assets/images/pfennig-middle.gif);
   background-repeat: no-repeat;
   height: 20px;
   width: 20px;
-  padding: 2px 25px 2px 0;
+  padding: 0px 7px 2px 0px;
 }
 
+
+/*************** SMALL MONEY ICON - TEXT *********************/
+
+.s-pfund-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+}
+
+.s-pfund-icon::before {
+  content: "";
+  background-image: url(/src/assets/images/pfund-small.gif);
+  background-repeat: no-repeat;
+  height: 14px;
+  width: 14px;
+  padding: 0px 1px 3px 0px;
+}
+
+.s-pfund-icon::after {
+  content: "";
+  border-right: 1px solid #c59889;
+  height: 14px;
+  padding-left: 5px;
+}
+
+.s-schilling-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  padding-left: 5px;
+}
+
+.s-schilling-icon::before {
+  content: "";
+  background-image: url(/src/assets/images/schilling-small.gif);
+  background-repeat: no-repeat;
+  height: 14px;
+  width: 14px;
+  padding: 0px 1px 3px 0px;
+}
+
+.s-schilling-icon::after {
+  content: "";
+  border-right: 1px solid #c59889;
+  height: 14px;
+  padding-left: 5px;
+}
+
+.s-pfennig-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  padding-left: 5px;
+}
+
+.s-pfennig-icon::before {
+  content: "";
+  background-image: url(/src/assets/images/pfennig-small.gif);
+  background-repeat: no-repeat;
+  height: 14px;
+  width: 14px;
+  padding: 0px 1px 3px 0px;
+}

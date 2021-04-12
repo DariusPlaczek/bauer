@@ -16,18 +16,7 @@ function ShowDate() {
     }, 1000);
   }, [month, year]);
 
-  return (
-    <div className="date-form-container">
-      <div className="quader-bottom-connection">
-        <div
-          className="inner-framed-container inner-framed"
-          style={{ width: "270px", padding: "0 25px"}}
-        >
-          <h4>{`${monthNames[monthTrigger].month} - ${yearTrigger}`} A.D.</h4>
-        </div>
-      </div>
-    </div>
-  );
+  return <h4>{`${monthNames[monthTrigger].month} - ${yearTrigger}`} A.D.</h4>;
 }
 
 export default ShowDate;

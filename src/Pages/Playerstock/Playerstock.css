@@ -2,14 +2,120 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  align-items: center;
+  height: 100%;
   width: 100%;
+  padding: 0 10px;
+}
+
+.player-warehouse {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.player-warehouse-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: 61px;
   margin-bottom: -8px;
-  z-index: 2;
-  text-transform: uppercase;
-  color: tranparent;
-  text-shadow: 0px 2px 3px rgb(255 255 255 / 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
+  z-index: 1;
+}
+
+.player-warehouse-title-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+  width: 85%;
+}
+
+.wp-name-money {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  height:24px;
+  width: 100%;
+  /* background-color:#ddd;
+  margin: -6px 0px 0 -6px; */
+}
+
+.wp-money {
+  display: flex;
+  flex-direction: row;
+}
+
+.warehouse-product-image {
+  /* border: 1px solid #222; */
+  height: auto;
+  width: 36px;
+  margin: 0 10px 0 5px;
+
+}
+
+.warehouse-product-image img {
+  width: 36px;
+  height: 36px;
+}
+
+.wp-details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.wp-details-product {
+  width: 100%;
+  padding: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.wp-flexible-container {
+
+}
+
+.wp-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 52px;
+  height: 26px;
+  margin-right: 5px;
+}
+
+.button-plus {
+  background: url("/src/assets/images/button/button-plus.gif");
+  background-size: 23px 26px;
+  width: 23px;
+  height: 26px;
+  background-repeat: no-repeat;
+}
+
+.button-minus {
+  background: url("/src/assets/images/button/button-minus.gif");
+  background-size: 23px 26px;
+  width: 23px;
+  height: 26px;
+  background-repeat: no-repeat;
+}
+
+.horizontal-button-plus {
+  background: url("/src/assets/images/button/horizontal-button-plus.gif");
+  background-size: 26px 23px;
+  width: 26px;
+  height: 23px;
+  background-repeat: no-repeat;
+}
+
+.horizontal-button-minus {
+  background: url("/src/assets/images/button/horizontal-button-minus.gif");
+  background-size: 26px 23px;
+  width: 26px;
+  height: 23px;
+  background-repeat: no-repeat;
 }

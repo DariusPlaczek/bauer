@@ -1,0 +1,33 @@
+.main-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 49px;
+}
+
+.middle-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.middle-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 61px;
+  margin-bottom: -8px;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.middle-date-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+  width: 85%;
+}
