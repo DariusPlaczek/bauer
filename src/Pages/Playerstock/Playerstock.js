@@ -1,9 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-import InteriorWarehouseDetail from "../../Components/InteriorWarehouseDetail/InteriorWarehouseDetail"
+import InteriorWarehouseDetail from "../../Components/InteriorWarehouseDetail/InteriorWarehouseDetail";
 import "./Playerstock.css";
 
 function Playerstock() {
+  const playerData = useSelector((state) => state.reduxPlayerData);
+
+  const addToCart = (event) => {
+    console.log(event);
+  }
 
   return (
     <div className="player-warehouse-container">
@@ -14,7 +20,17 @@ function Playerstock() {
       </div>
       <div className="quader-out-frame-container player-warehouse">
         <div className="col-50 hr-horizontal">
-          <InteriorWarehouseDetail title="Erdbeere" count="20" price="20" />
+          {playerData.stockProducts &&
+            playerData.stockProducts.map((value) => (
+              <InteriorWarehouseDetail
+                id={value.customID}
+                keyID={value.productID}
+                productName={value.productName}
+                count={value.count}
+                price={value.basicPrice}
+                onChange={addToCart}
+              />
+            ))}
         </div>
         <div className="col-50">
           <div className="inner-frame-container custom-warehouse"></div>

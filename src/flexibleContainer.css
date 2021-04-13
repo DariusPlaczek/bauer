@@ -44,6 +44,7 @@
 .inner-frame-container.custom-warehouse {
   height: 87px;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 .inner-frame-container {

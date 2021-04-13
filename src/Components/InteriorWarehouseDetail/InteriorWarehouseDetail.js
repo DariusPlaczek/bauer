@@ -1,21 +1,50 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { useConversion } from "../../directories";
 
 function InteriorWarehouseDetail(props) {
-  const {title, count, price } = props;
-
+  const { id, keyID, productName, count, price, onChange } = props;
   const { pfennig, schilling, pfund } = useConversion(price);
 
+  const [useCount, setUseCount] = useState(0);
+
+  const OnWheelFunction = (event) => {
+    if (event.deltaY < 0) {
+      if (count !== useCount) {
+        onChange([id, productName, useCount + 1, price]);
+        setUseCount((prev) => prev + 1)
+      }
+    } else {
+      if (useCount !== 0 && count !== 0) {
+        onChange([id, productName, useCount - 1, price]);
+        setUseCount((prev) => prev - 1)
+      }
+    }
+  }
+
+  const addition = (event) => {
+    if (count !== useCount) {
+      setUseCount((prev) => prev + 1);
+      onChange([id, productName, event.target.value, price]);
+    }
+  };
+
+  const subtract = (event) => {
+    if (useCount !== 0 && count !== 0) {
+      setUseCount((prev) => prev - 1);
+      onChange([id, productName, event.target.value, price]);
+    }
+  };
+
   return (
-    <div className="inner-frame-container custom-warehouse">
+    <div key={id} className="inner-frame-container custom-warehouse">
       <div className="wp-name-money">
         <div className="wp-name">
-          <h6>{title}</h6>
+          <h6>{productName}</h6>
         </div>
-        <div className="wp-buttons">
-          <div className="horizontal-button-plus"></div>
-          <div className="horizontal-button-minus"></div>
+        <div className="wp-buttons" onWheel={(event) => OnWheelFunction(event)}>
+          <button className="horizontal-button-plus" value={useCount + 1} onClick={(event) => addition(event)}></button>
+          <button className="horizontal-button-minus" value={useCount - 1} onClick={(event) => subtract(event)}></button>
         </div>
       </div>
       <div className="wp-details">

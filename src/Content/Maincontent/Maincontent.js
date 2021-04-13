@@ -5,9 +5,9 @@ import Topbar from "../TopbarContent/Topbar";
 import Navigation from "../Navigation/Navigation";
 import LeftContent from "../LeftContent/LeftContent";
 import MainCenterContent from "../CenterContent/MainCenterContent";
-import ShowDate from "../../Components/ShowDate/ShowDate";
 
 import PlayerStock from "../../Pages/Playerstock/Playerstock";
+import Sellstock from "../../Pages/Sellstock/Sellstock";
 
 import "./Maincontent.css";
 // import "./HomeMiddle.css";
@@ -45,34 +45,18 @@ function Maincontent() {
             </Switch>
           </div>
           <div className="main-middle-center-container">
-            {/* <ShowDate />*/}
             <MainCenterContent />
           </div>
-          <div className="main-middle-right-container"></div>
+          <div className="main-middle-right-container">
+          <Switch>
+              <Route path="/playerstock">
+              <Sellstock />
+              </Route>
+              <Route exact path="/"></Route>
+            </Switch>
+          </div>
           <div className="main-middle-navigation-container"></div>
         </div>
-
-        {/*
-
-
-        <ShowDate />
-        <div className="middlecontent-container">
-          <MainCenterContent />
-        </div>
-
-        <Switch>
-          <Route path="/playerstock">
-            <PlayerStock />
-          </Route>
-          <Route path="/citystock">
-            <LeftContent />
-          </Route>
-         <Route exact path="/">
-
-          </Route>
-        </Switch>
-      </Router> */}
-        {/* <Rightsidebar /> */}
       </div>
     </Router>
   );
