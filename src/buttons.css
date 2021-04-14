@@ -1,0 +1,55 @@
+.button.blue {
+  /* hide button default stuff */
+  background-color: Transparent;
+  background-repeat: repeat;
+  border: none;
+  overflow: hidden;
+  outline: none;
+  /* background */
+  background: url("/src/assets/images/button/button-blue.gif") repeat repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+  background-size: 100% 80%;
+  /* default size and display */
+  max-width: 100%;
+  min-width: 140px;
+  height: 17px;
+  display: inline-block;
+  /* padding */
+  /* padding-top: 5px;
+  padding-left: 35px;
+  padding-right: 35px; */
+  overflow: visible;
+}
+
+.button.blue:before {
+  white-space: nowrap;
+  display: inline-block;
+  content: "";
+  width: 21px;
+  display: block;
+  height: 100%;
+  background: transparent url("/src/assets/images/button/button-blue-left.gif") no-repeat right
+    center;
+  background-size: 100% 100%;
+  margin: 0 0 0 0;
+  left: 0px;
+  float: left;
+  margin-left: -21px;
+}
+
+.button.blue:after {
+  white-space: nowrap;
+  display: block;
+  content: "";
+  width: 21px;
+  height: 100%;
+  background: transparent url("/src/assets/images/button/button-blue-right.gif") no-repeat left
+    center;
+  background-size: 100% 100%;
+  margin: 0 0 0 0;
+  right: 0px;
+  float: right;
+  margin-right: -21px;
+}

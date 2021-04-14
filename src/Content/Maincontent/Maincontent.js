@@ -6,9 +6,7 @@ import Navigation from "../Navigation/Navigation";
 import LeftContent from "../LeftContent/LeftContent";
 import MainCenterContent from "../CenterContent/MainCenterContent";
 
-import PlayerStock from "../../Pages/Playerstock/Playerstock";
-import Sellstock from "../../Pages/Sellstock/Sellstock";
-
+import PlayerTrade from '../../Pages/PlayerTrade/PlayerTrade'
 import "./Maincontent.css";
 // import "./HomeMiddle.css";
 
@@ -29,32 +27,25 @@ function Maincontent() {
         <div className="main-topbar-container">
           <Topbar />
         </div>
-         <div className="main-middle-container">
+        <div className="main-middle-container">
           <div className="main-middle-navigation-container">
             <Navigation />
           </div>
-          <div className="main-middle-left-container">
+          <div className="main-middle-left-container"></div>
+          <div className="main-middle-center-container">
             <Switch>
               <Route path="/playerstock">
-                <PlayerStock />
+                <PlayerTrade />
               </Route>
               <Route path="/citystock">
                 <LeftContent />
               </Route>
-              <Route exact path="/"></Route>
-            </Switch>
-          </div>
-          <div className="main-middle-center-container">
-            <MainCenterContent />
-          </div>
-          <div className="main-middle-right-container">
-          <Switch>
-              <Route path="/playerstock">
-              <Sellstock />
+              <Route exact path="/">
+                <MainCenterContent />
               </Route>
-              <Route exact path="/"></Route>
             </Switch>
           </div>
+          <div className="main-middle-right-container"></div>
           <div className="main-middle-navigation-container"></div>
         </div>
       </div>

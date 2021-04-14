@@ -82,3 +82,22 @@
   background-origin: padding-box;
   background-position: center;
 }
+
+.quader-trader-container {
+  border-style: solid;
+  border-image-source: url("/src/assets/images/inner/trade-container.gif");
+  border-image-repeat: repeat;
+  border-image-slice: 10 10 10 10;
+  border-image-width: 10px;
+  border-width: 23px;
+  /* internal border */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* background */
+  /* background: url("/src/assets/images/test/background-image-golden.png") repeat repeat; */
+  background-color: #ebcdc3;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+}

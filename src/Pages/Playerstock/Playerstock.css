@@ -10,6 +10,8 @@
 
 .player-warehouse {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: 100%;
   width: 100%;
 }
@@ -118,4 +120,12 @@
   width: 26px;
   height: 23px;
   background-repeat: no-repeat;
+}
+
+/*********************** TRADE *******************************/
+
+.trade-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

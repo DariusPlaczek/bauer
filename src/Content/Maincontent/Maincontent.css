@@ -26,24 +26,19 @@
   width: 60px;
 }
 
-.main-middle-left-container {
+.main-middle-left-container, .main-middle-right-container {
   display: flex;
-  width: 30%;
+  width: 10%;
 }
 
 .main-middle-center-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   height: 100%;
-  width: 40%;
+  width: 80%;
 }
 
-.main-middle-right-container {
-  display: flex;
-  width: 30%;
-  /* margin-top: 46px; */
-}
 
 .topbar {
   display: flex;
