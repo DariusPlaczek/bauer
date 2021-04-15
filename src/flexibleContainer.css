@@ -114,16 +114,14 @@
 
 .hr-border-bottom {
   border-style: solid;
-  border-image-source: url("/src/assets/images/hr-border-bottom.gif");
+  border-image-source: url("/src/assets/images/hr-small.gif");
   border-image-repeat: repeat;
   border-image-slice: 10 10 10 10;
   border-image-width: 10px;
   border-width: 15px;
-  /* internal border */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  /* background */
   /* background: url("/src/assets/images/test/background-image-golden.png") repeat repeat; */
   background-color: #ebcdc3;
   background-clip: padding-box;
@@ -132,8 +130,19 @@
 }
 
 hr {
-  display:block;
-  border:0px;
-  height:3px;
-  background-image: url("/src/assets//images//hr-border-bottom.gif");
+  border: 0;
+  height: 5px;
+  background: #333;
+  background-image: url("/src/assets/images/hr/hr-small-middle.gif");
+  background-repeat: repeat;
+}
+
+hr:before {
+  display: block;
+  content: '';
+  height: 5px;
+  width: 5px;
+  margin-left: -5px;
+  background-image: url("/src/assets/images/hr/hr-small-left.gif");
+  background-repeat: no-repeat;
 }

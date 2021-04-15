@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
+import {useConversion}  from '../../directories'
+
 import InteriorWarehouseDetail from "../../Components/InteriorWarehouseDetail/InteriorWarehouseDetail";
 import InteriorTradeDetails from "../../Components/InteriorTradeDetails/InteriorTradeDetails";
 import PlayerStock from "../Playerstock/Playerstock";
@@ -11,13 +13,22 @@ function PlayerTrade() {
 
   const [tradeList, setTradeList] = useState([]);
   const [cart, setCart] = useState({});
+  const [totalSum, setTotalSum] = useState(0)
+
+  const { pfennig, schilling, pfund } = useConversion(totalSum)
 
   useEffect(() => {
-    // setTradeList(Object.values(cart))
     setTradeList(Object.values(cart).filter((value) => value.count > 0));
-    // const result = Object.values(cart).filter(value => value.count > 0)
-    // console.log(result);
   }, [cart]);
+
+  useEffect(() => {
+    let sum = 0
+    for (const iterator of tradeList) {
+      sum += iterator.price;
+      setTotalSum(sum)
+    }
+  }, [tradeList])
+
 
   const addToCart = (event) => {
     if (cart[event[0].id] === undefined) {
@@ -25,7 +36,7 @@ function PlayerTrade() {
         ...cart,
         [event[0].id]: {
           productName: event[0].productName,
-          count: parseInt(event[0].count),
+          count: 1,
           price: event[0].price,
         },
       });
@@ -82,13 +93,13 @@ function PlayerTrade() {
                   <button className="button blue">Verkaufen</button>
                   <div className="inner-frame-container trade-inner-frame-container">
                     <div className="m-pfund-icon">
-                      <h5>999</h5>
+                      <h5>{pfund}</h5>
                     </div>
                     <div className="m-schilling-icon">
-                      <h5>999</h5>
+                      <h5>{schilling}</h5>
                     </div>
                     <div className="m-pfennig-icon">
-                      <h5>999</h5>
+                      <h5>{pfennig}</h5>
                     </div>
                   </div>
                 </div>
@@ -109,8 +120,7 @@ function PlayerTrade() {
           </div>
         </div>
       </div>
-      {/* <PlayerStock />
-      <Sellstock /> */}
+
     </>
   );
 }
