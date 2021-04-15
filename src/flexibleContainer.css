@@ -35,7 +35,8 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   /* background */
-  background: url("/src/assets/images/inner/quader-out-background.gif") repeat repeat;
+  background: url("/src/assets/images/inner/quader-out-background.gif") repeat
+    repeat;
   background-clip: padding-box;
   background-origin: padding-box;
   background-position: center;
@@ -89,7 +90,7 @@
   border-image-repeat: repeat;
   border-image-slice: 10 10 10 10;
   border-image-width: 10px;
-  border-width: 23px;
+  border-width: 15px;
   /* internal border */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -100,4 +101,39 @@
   background-clip: padding-box;
   background-origin: padding-box;
   background-position: center;
+}
+
+.trade-inner-frame-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+  padding: 0 15px;
+  width: 250px;
+}
+
+.hr-border-bottom {
+  border-style: solid;
+  border-image-source: url("/src/assets/images/hr-border-bottom.gif");
+  border-image-repeat: repeat;
+  border-image-slice: 10 10 10 10;
+  border-image-width: 10px;
+  border-width: 15px;
+  /* internal border */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* background */
+  /* background: url("/src/assets/images/test/background-image-golden.png") repeat repeat; */
+  background-color: #ebcdc3;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+}
+
+hr {
+  display:block;
+  border:0px;
+  height:3px;
+  background-image: url("/src/assets//images//hr-border-bottom.gif");
 }

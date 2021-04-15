@@ -1,29 +1,32 @@
+button {
+  text-transform: uppercase;
+  font-size: 10px;
+  cursor: pointer;
+}
+
 .button.blue {
   /* hide button default stuff */
-  background-color: Transparent;
-  background-repeat: repeat;
-  border: none;
-  overflow: hidden;
-  outline: none;
+  border-style: solid;
+  border-image-source: url("/src/assets/images/button/button-blue-02.gif");
+  border-image-repeat: repeat;
+  border-image-slice: 10 10 10 10;
+  border-image-width: 10px;
+  border-width: 10px;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   /* background */
-  background: url("/src/assets/images/button/button-blue.gif") repeat repeat;
+  background: url("/src/assets/images/button/button-blue-middle.gif") repeat repeat;
+  /* background-color: #ebcdc3; */
   background-clip: padding-box;
   background-origin: padding-box;
   background-position: center;
-  background-size: 100% 80%;
-  /* default size and display */
-  max-width: 100%;
-  min-width: 140px;
-  height: 17px;
-  display: inline-block;
-  /* padding */
-  /* padding-top: 5px;
-  padding-left: 35px;
-  padding-right: 35px; */
-  overflow: visible;
+  color: white;
+  padding: 5px 10px;
 }
 
-.button.blue:before {
+/* .button.blue:before {
   white-space: nowrap;
   display: inline-block;
   content: "";
@@ -52,4 +55,4 @@
   right: 0px;
   float: right;
   margin-right: -21px;
-}
+} */
