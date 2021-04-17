@@ -1,56 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React  from "react";
 import { useSelector } from "react-redux";
 
 import {useConversion}  from '../../directories'
+import './playerTrade.css'
+
 
 import InteriorWarehouseDetail from "../../Components/InteriorWarehouseDetail/InteriorWarehouseDetail";
 import InteriorTradeDetails from "../../Components/InteriorTradeDetails/InteriorTradeDetails";
-import PlayerStock from "../Playerstock/Playerstock";
-import Sellstock from "../Sellstock/Sellstock";
+import useTradeList from "../../function/useHooks/useTradeList";
 
 function PlayerTrade() {
   const playerData = useSelector((state) => state.reduxPlayerData);
-
-  const [tradeList, setTradeList] = useState([]);
-  const [cart, setCart] = useState({});
-  const [totalSum, setTotalSum] = useState(0)
+  const [tradeList, totalSum, addCart] = useTradeList();
 
   const { pfennig, schilling, pfund } = useConversion(totalSum)
-
-  useEffect(() => {
-    setTradeList(Object.values(cart).filter((value) => value.count > 0));
-  }, [cart]);
-
-  useEffect(() => {
-    let sum = 0
-    for (const iterator of tradeList) {
-      sum += iterator.price;
-      setTotalSum(sum)
-    }
-  }, [tradeList])
-
-
-  const addToCart = (event) => {
-    if (cart[event[0].id] === undefined) {
-      setCart({
-        ...cart,
-        [event[0].id]: {
-          productName: event[0].productName,
-          count: 1,
-          price: event[0].price,
-        },
-      });
-    } else {
-      setCart({
-        ...cart,
-        [event[0].id]: {
-          productName: event[0].productName,
-          count: parseInt(event[0].count),
-          price: event[0].price * parseInt(event[0].count, 10),
-        },
-      });
-    }
-  };
 
   return (
     <>
@@ -72,7 +35,7 @@ function PlayerTrade() {
                     productName={value.productName}
                     count={value.count}
                     price={value.basicPrice}
-                    onChange={addToCart}
+                    onChange={(event) => addCart(event)}
                   />
                 ))}
             </div>
@@ -103,7 +66,7 @@ function PlayerTrade() {
                     </div>
                   </div>
                 </div>
-                <hr />
+                <hr className="una" />
               </div>
               <div className="col-100-row">
                 {tradeList &&

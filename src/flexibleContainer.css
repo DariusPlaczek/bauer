@@ -129,20 +129,10 @@
   background-position: center;
 }
 
-hr {
+/* hr {
   border: 0;
   height: 5px;
   background: #333;
-  background-image: url("/src/assets/images/hr/hr-small-middle.gif");
+  background-image: url("/src/assets/images/hr-small.gif");
   background-repeat: repeat;
-}
-
-hr:before {
-  display: block;
-  content: '';
-  height: 5px;
-  width: 5px;
-  margin-left: -5px;
-  background-image: url("/src/assets/images/hr/hr-small-left.gif");
-  background-repeat: no-repeat;
-}
+} */
