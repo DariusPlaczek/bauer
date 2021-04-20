@@ -1,19 +1,27 @@
 import React  from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import {useConversion}  from '../../directories'
 import './playerTrade.css'
 
-
 import InteriorWarehouseDetail from "../../Components/InteriorWarehouseDetail/InteriorWarehouseDetail";
 import InteriorTradeDetails from "../../Components/InteriorTradeDetails/InteriorTradeDetails";
 import useTradeList from "../../function/useHooks/useTradeList";
+
+import {addToPlayerStock} from "../../function/redux/playerConfig/redux"
+
 
 function PlayerTrade() {
   const playerData = useSelector((state) => state.reduxPlayerData);
   const [tradeList, totalSum, addCart] = useTradeList();
 
   const { pfennig, schilling, pfund } = useConversion(totalSum)
+  const dispatch = useDispatch();
+
+  const sell = () => {
+    
+    dispatch(addToPlayerStock({stock: tradeList}))
+  }
 
   return (
     <>
@@ -53,7 +61,7 @@ function PlayerTrade() {
             <div className="trade-container">
               <div className="col-100">
                 <div className="quader-trade-wrapper">
-                  <button className="button blue">Verkaufen</button>
+                  <button className="button blue" onClick={sell} >Verkaufen</button>
                   <div className="inner-frame-container trade-inner-frame-container">
                     <div className="m-pfund-icon">
                       <h5>{pfund}</h5>

@@ -46,7 +46,7 @@ function reducer(state = INITIAL_STATE, action) {
     case ADD_TO_PLAYER_STOCK:
       return {
         ...state,
-        playerMoney: action.payload.money,
+      //  playerMoney: action.payload.money,
         stockProducts: addProducts(
           [...state.stockProducts],
           action.payload.stock
@@ -82,15 +82,20 @@ export default reducer;
 
 
 function addProducts(stockArray, changeArray) {
-  for (let i = 0; i < stockArray.length; i++) {
-    if (stockArray[i].productName === changeArray[0]) {
-      const cache = stockArray[i].count + changeArray[1];
-      stockArray[i].count = cache;
-    }
+
+  for (const iterator of changeArray) {
   }
 
-  return stockArray;
-}
+  // for (let i = 0; i < stockArray.length; i++) {
+  //   if (stockArray[i].productName === changeArray[0]) {
+  //     const cache = stockArray[i].count + changeArray[1];
+  //     stockArray[i].count = cache;
+  //   }
+  // }
+
+  // return stockArray;
+
+  }
 
 function removeProducts(stockArray, changeArray) {
   for (let i = 0; i < stockArray.length; i++) {
