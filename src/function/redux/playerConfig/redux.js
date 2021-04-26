@@ -5,8 +5,8 @@ const ADD_WARE_FROM_TILE_CARD = "player/ADD_WARE_FROM_TILE_CARD";
 
 export const loginPlayer = (event) => ({
   type: LOGIN_PLAYER,
-  payload: event
-})
+  payload: event,
+});
 
 export const addToPlayerStock = (event) => ({
   type: ADD_TO_PLAYER_STOCK,
@@ -20,12 +20,12 @@ export const removeToPlayerStock = (event) => ({
 
 export const addWareFromTileCard = (event) => ({
   type: ADD_WARE_FROM_TILE_CARD,
-  payload: event
-})
+  payload: event,
+});
 
 const INITIAL_STATE = {
-  playerId: '',
-  playerName: '',
+  playerId: "",
+  playerName: "",
   playerMoney: 0,
   storageSpace: 0,
   stockProducts: [],
@@ -33,7 +33,6 @@ const INITIAL_STATE = {
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-
     case LOGIN_PLAYER:
       return {
         ...state,
@@ -46,7 +45,7 @@ function reducer(state = INITIAL_STATE, action) {
     case ADD_TO_PLAYER_STOCK:
       return {
         ...state,
-      //  playerMoney: action.payload.money,
+        playerMoney: state.playerMoney - action.payload.money,
         stockProducts: addProducts(
           [...state.stockProducts],
           action.payload.stock
@@ -56,11 +55,11 @@ function reducer(state = INITIAL_STATE, action) {
     case REMOVE_TO_PLAYER_STOCK:
       return {
         ...state,
-        playerMoney: action.payload.money,
+        playerMoney: state.playerMoney + action.payload.money,
         stockProducts: removeProducts(
           [...state.stockProducts],
           action.payload.stock
-        )
+        ),
       };
 
     case ADD_WARE_FROM_TILE_CARD:
@@ -70,8 +69,8 @@ function reducer(state = INITIAL_STATE, action) {
           [...state.stockProducts],
           action.payload.productId,
           action.payload.productCount
-        )
-      }
+        ),
+      };
 
     default:
       return { ...state };
@@ -80,28 +79,28 @@ function reducer(state = INITIAL_STATE, action) {
 
 export default reducer;
 
-
 function addProducts(stockArray, changeArray) {
 
-  for (const iterator of changeArray) {
+  for (let i = 0; i < stockArray.length; i++) {
+    for (let j = 0; j < changeArray.length; j++) {
+      if (stockArray[i]._id === changeArray[j].id) {
+        const add = stockArray[i].count + changeArray[j].count;
+        stockArray[i].count = add;
+      }
+    }
   }
 
-  // for (let i = 0; i < stockArray.length; i++) {
-  //   if (stockArray[i].productName === changeArray[0]) {
-  //     const cache = stockArray[i].count + changeArray[1];
-  //     stockArray[i].count = cache;
-  //   }
-  // }
+  return stockArray;
 
-  // return stockArray;
-
-  }
+}
 
 function removeProducts(stockArray, changeArray) {
   for (let i = 0; i < stockArray.length; i++) {
-    if (stockArray[i].productName === changeArray[0]) {
-      const cache = stockArray[i].count - changeArray[1];
-      stockArray[i].count = cache;
+    for (let j = 0; j < changeArray.length; j++) {
+      if (stockArray[i]._id === changeArray[j].id) {
+        const add = stockArray[i].count - changeArray[j].count;
+        stockArray[i].count = add;
+      }
     }
   }
 
@@ -115,6 +114,5 @@ function addProductsFromTileCard(stockArray, productId, changeCount) {
     }
   }
 
-  return stockArray
-
+  return stockArray;
 }

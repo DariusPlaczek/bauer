@@ -6,10 +6,12 @@ function useTradeList() {
   const [totalSum, setTotalSum] = useState(0);
 
   const addCart = (event) => {
+
     if (cart[event[0].id] === undefined) {
       setCart({
         ...cart,
         [event[0].id]: {
+          id: event[0].id,
           productName: event[0].productName,
           count: 1,
           price: event[0].price,
@@ -19,9 +21,10 @@ function useTradeList() {
       setCart({
         ...cart,
         [event[0].id]: {
+          id: event[0].id,
           productName: event[0].productName,
-          count: parseInt(event[0].count),
-          price: event[0].price * parseInt(event[0].count, 10),
+          count: event[0].count,
+          price: event[0].price * event[0].count,
         },
       });
     }
@@ -39,7 +42,24 @@ function useTradeList() {
     }
   }, [tradeList]);
 
-  return [tradeList, totalSum, addCart];
+  useEffect(() => {
+    
+    if (tradeList.length === 0) {
+      setTotalSum(0)
+      return
+    }
+
+    return
+
+  }, [tradeList])
+
+  const resetList = () => {
+    setCart({});
+    setTradeList([]);
+    setTotalSum(0);
+  }
+
+  return [tradeList, totalSum, addCart, resetList];
 }
 
 export default useTradeList;

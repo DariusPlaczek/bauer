@@ -53,16 +53,30 @@ button {
   border: 0;
 }
 
+hr.brown {
+  border-top: 2px solid #c59889;
+}
+
 .game-container {
   width: 100vw;
   height: 100vh;
   background-color: #aaaaaa;
 }
 
+img.trade-image {
+  border-left: 1px solid #b68e80;
+  border-bottom: 1px solid #b68e80;
+  border-right: 1px solid #b68e80;
+  border-top: 1px solid #ebcdc3;
+  border-radius: 7px;
+  padding: 4px;
+}
 
+h5.trade-title {
+
+}
 
 /***************************** COLS ***********************************/
-
 
 .col-20 {
   display: flex;
@@ -94,9 +108,8 @@ button {
 }
 
 .col-50-row {
-  display: flex;
-  height: 100%;
-  width: 49%;
+  padding: 3px 3px 3px 6px;
+  width: calc(50% - 9px);
 }
 
 .col-50 {

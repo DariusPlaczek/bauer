@@ -7,15 +7,16 @@ function InteriorTradeDetails(props) {
 
   return (
     <div key={id} className="col-50-row">
-      <div className="inner-frame-container custom-warehouse">
+      {/* <div className="inner-frame-container custom-warehouse"> */}
+      <div className="quader-trader-container custom-warehouse">
         <div className="wp-name-money">
           <div className="wp-name">
-            <h6>{productName}</h6>
+            <h5 className="trade-title">{productName}</h5>
           </div>
         </div>
         <div className="wp-details">
           <div className="warehouse-product-image">
-            <img src="Images/weizen.png" alt="test" />
+            <img className="trade-image" src="Images/weizen.png" alt="test" />
           </div>
           <div className="wp-flexible-container wp-details-product">
             <h6>Anzahl: {count} </h6>

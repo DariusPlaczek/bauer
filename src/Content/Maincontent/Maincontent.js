@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Topbar from "../TopbarContent/Topbar";
 import Navigation from "../Navigation/Navigation";
-import LeftContent from "../LeftContent/LeftContent";
 import MainCenterContent from "../CenterContent/MainCenterContent";
 
 import PlayerTrade from '../../Pages/PlayerTrade/PlayerTrade'
 import "./Maincontent.css";
+import CityTrade from "../../Pages/CityTrade/CityTrade";
 // import "./HomeMiddle.css";
 
 // import ContentButtons from "../../../Alt/ContentButtons/ContentButtons"
@@ -38,7 +38,7 @@ function Maincontent() {
                 <PlayerTrade />
               </Route>
               <Route path="/citystock">
-                <LeftContent />
+                <CityTrade />
               </Route>
               <Route exact path="/">
                 <MainCenterContent />

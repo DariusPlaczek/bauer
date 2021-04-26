@@ -37,7 +37,7 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         stockProducts: addCounts([...state.stockProducts], action.payload),
       };
-  
+
     default:
       return {...state}
   }
@@ -48,24 +48,28 @@ export default reducer
 
 function removeCounts(stockArray, changeArray) {
   for (let i = 0; i < stockArray.length; i++) {
-    if (stockArray[i].productName === changeArray[0]) {
-      const cache = stockArray[i].count - changeArray[1];
-      stockArray[i].count = cache;
+    for (let j = 0; j < changeArray.length; j++) {
+      if (stockArray[i]._id === changeArray[j].id) {
+        const add = stockArray[i].count - changeArray[j].count;
+        stockArray[i].count = add;
+      }
     }
   }
-  
+
   return stockArray;
 }
 
 
 function addCounts(stockArray, changeArray) {
   for (let i = 0; i < stockArray.length; i++) {
-    if (stockArray[i].productName === changeArray[0]) {
-      const cache = stockArray[i].count + changeArray[1];
-      stockArray[i].count = cache;
+    for (let j = 0; j < changeArray.length; j++) {
+      if (stockArray[i]._id === changeArray[j].id) {
+        const add = stockArray[i].count + changeArray[j].count;
+        stockArray[i].count = add;
+      }
     }
   }
-  
+
   return stockArray;
 }
 

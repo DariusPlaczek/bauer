@@ -86,21 +86,22 @@
 
 .quader-trader-container {
   border-style: solid;
-  border-image-source: url("/src/assets/images/inner/trade-container.gif");
+  border-image-source: url("/src/assets/images/inner/trade-container-01.gif");
   border-image-repeat: repeat;
-  border-image-slice: 10 10 10 10;
+  border-image-slice: 10;
   border-image-width: 10px;
-  border-width: 15px;
+  border-width: 10px;
   /* internal border */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   /* background */
   /* background: url("/src/assets/images/test/background-image-golden.png") repeat repeat; */
-  background-color: #ebcdc3;
+  background-color: #DEAC9B;
   background-clip: padding-box;
   background-origin: padding-box;
   background-position: center;
+  padding: 5px;
 }
 
 .trade-inner-frame-container {
@@ -128,11 +129,3 @@
   background-origin: padding-box;
   background-position: center;
 }
-
-/* hr {
-  border: 0;
-  height: 5px;
-  background: #333;
-  background-image: url("/src/assets/images/hr-small.gif");
-  background-repeat: repeat;
-} */

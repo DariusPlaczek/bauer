@@ -1,13 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import { useConversion } from "../../directories";
 
 function InteriorWarehouseDetail(props) {
-  const { id, productName, count, price, onChange } = props;
+  const { id, productName, count, price, onChange, resetCount} = props;
   const { pfennig, schilling, pfund } = useConversion(price);
 
   const [useCount, setUseCount] = useState(0);
 
+  useEffect(() => {
+    setUseCount(0)
+  }, [resetCount])
+
+ 
   const OnWheelFunction = (event) => {
     if (event.deltaY < 0) {
       if (count !== useCount) {
@@ -25,14 +30,14 @@ function InteriorWarehouseDetail(props) {
   const addition = (event) => {
     if (count !== useCount) {
       setUseCount((prev) => prev + 1);
-      onChange([{id: id, productName: productName, count: event.target.value, price: price}]);
+      onChange([{id: id, productName: productName, count: useCount + 1, price: price}]);
     }
   };
 
   const subtract = (event) => {
     if (useCount !== 0 && count !== 0) {
       setUseCount((prev) => prev - 1);
-      onChange([{id: id, productName: productName, count: event.target.value, price: price}]);
+      onChange([{id: id, productName: productName, count: useCount - 1, price: price}]);
     }
   };
 

@@ -1,43 +1,47 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import "./playerTrade.css";
-
 import InteriorWarehouseDetail from "../../Components/InteriorWarehouseDetail/InteriorWarehouseDetail";
 import InteriorTradeDetails from "../../Components/InteriorTradeDetails/InteriorTradeDetails";
 import useTradeList from "../../function/useHooks/useTradeList";
 
-import { removeToPlayerStock } from "../../function/redux/playerConfig/redux";
-import { addToCityStock } from "../../function/redux/cityStockConfig/redux"
+import { addToPlayerStock } from "../../function/redux/playerConfig/redux";
+import { removeToCityStock } from "../../function/redux/cityStockConfig/redux";
 import ColFifty from "../../Content/Cols/ColFifty/ColFifty";
 import MediumMoney from "../../Components/MediumMoney/MediumMoney";
 import TradeTopContent from "../../Content/TradeTopContent/TradeTopContent";
 
-function PlayerTrade() {
-  const playerData = useSelector((state) => state.reduxPlayerData);
+function CityTrade() {
+  const cityData = useSelector((state) => state.reduxCityData);
+  const playerMoney = useSelector((state) => state.reduxPlayerData.playerMoney)
   const [tradeList, totalSum, addCart, resetList] = useTradeList();
   const [resetCount, setResetCount] = useState(false);
   const [emptyList, setEmptyList] = useState(true);
 
   const dispatch = useDispatch();
 
-  const sell = () => {
-    dispatch(removeToPlayerStock({ money: totalSum, stock: tradeList }));
-    dispatch(addToCityStock(tradeList));
+  const add = () => {
+    dispatch(removeToCityStock(tradeList));
+    dispatch(addToPlayerStock({ money: totalSum, stock: tradeList }));
     resetList();
     setResetCount(() => (resetCount ? false : true));
   };
 
   useEffect(() => {
-    tradeList.length === 0 ? setEmptyList(true) : setEmptyList(false);
-  }, [tradeList]);
+
+    if (totalSum > playerMoney || tradeList.length === 0 ) {
+      setEmptyList(true)
+    } else {
+      setEmptyList(false)
+    }
+
+  }, [totalSum, playerMoney, tradeList])
 
   return (
     <>
-
-      <ColFifty title="SPIELERLAGER">
-        {playerData.stockProducts &&
-          playerData.stockProducts.map((value) => (
+      <ColFifty title="STADTLAGER">
+      {cityData.stockProducts &&
+          cityData.stockProducts.map((value) => (
             <InteriorWarehouseDetail
               key={`warePlayer-${value.customID}`}
               id={value.customID}
@@ -50,18 +54,20 @@ function PlayerTrade() {
             />
           ))}
       </ColFifty>
-
+      
       <ColFifty title="HANDEL">
         <div className="trade-container">
           <TradeTopContent>
-            <button className="button blue" onClick={sell} disabled={emptyList}>Verkaufen</button>
+            <button className="button blue" onClick={add} disabled={emptyList}>
+              Kaufen
+            </button>
             <MediumMoney sum={totalSum} />
           </TradeTopContent>
           <div className="col-100-row">
-            {tradeList &&
+          {tradeList &&
               tradeList.map((value) => (
                 <InteriorTradeDetails
-                  key={`tradePlayer-${value.productName}`}
+                  key={`tradeCity-${value.productName}`}
                   productName={value.productName}
                   count={value.count}
                   price={value.price}
@@ -74,4 +80,4 @@ function PlayerTrade() {
   );
 }
 
-export default PlayerTrade;
+export default CityTrade;

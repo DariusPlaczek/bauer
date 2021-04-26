@@ -12,7 +12,7 @@ function Login() {
 
   const { playerMoney, storageSpace, stockProducts } = useSelector((state) => state.reduxPlayerData)
   const { tileBoard } = useSelector((state) => state.reduxTileCard)
-  const warestockProducts = useSelector((state) => state.reduxCityStoreData.stockProducts)
+  const wareStockProducts = useSelector((state) => state.reduxCityData.stockProducts)
   const { day, month, year } = useSelector((state) => state.reduxDate)
   const dispatch = useDispatch();
 
@@ -49,7 +49,7 @@ function Login() {
       },
       ware: {
         playerWarehouse: stockProducts,
-        cityWarehouse: warestockProducts
+        cityWarehouse: wareStockProducts
       },
       tBoard: tileBoard
     }
